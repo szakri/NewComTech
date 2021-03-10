@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcClient.Protos";
+
+package school;
+
+service School
+{
+	rpc GetCourses (EmptyMessage) returns (stream CourseDTO);
+	rpc GetStudents (EmptyMessage) returns (stream StudentDTO);
+	rpc GetSubjects (EmptyMessage) returns (stream SubjectDTO);
+}
+
+message CourseDTO
+{
+	string Name = 1;
+	string Type = 2;
+	int32 Day = 3;
+	string From = 4;
+	string To = 5;
+}
+
+message StudentDTO
+{
+	string Name = 1;
+	string Neptun = 2;
+	string DayOfBirth = 3;
+}
+
+message SubjectDTO
+{
+	string Name = 1;
+}
+
+message EmptyMessage {}
