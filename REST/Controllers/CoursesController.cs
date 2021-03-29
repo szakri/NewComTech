@@ -33,15 +33,17 @@ namespace REST.Controllers
             return _mapper.Map<List<CourseDTO>>(courses);
         }
 
-        /*[HttpGet]
-        public async Task<ActionResult<IEnumerable<Course>>> GetCourses()
+        // GET: api/Courses/withSubject
+        [HttpGet("withSubject")]
+        public async Task<ActionResult<IEnumerable<CourseSubjectDTO>>> GetCoursesWithSubject()
         {
-            return await _context.Courses.ToListAsync();
-        }*/
+            var courses = await _context.Courses.Include(c => c.Subject).ToListAsync();
+            return _mapper.Map<List<CourseSubjectDTO>>(courses);
+        }
 
         // GET: api/Courses/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Course>> GetCourse(int id)
+        public async Task<ActionResult<CourseDTO>> GetCourse(int id)
         {
             var course = await _context.Courses.FindAsync(id);
 
@@ -50,7 +52,21 @@ namespace REST.Controllers
                 return NotFound();
             }
 
-            return course;
+            return _mapper.Map<CourseDTO>(course);
+        }
+
+        // GET: api/Courses/5/withSubject
+        [HttpGet("{id}/withSubject")]
+        public async Task<ActionResult<CourseSubjectDTO>> GetCoursesWithSubject(int id)
+        {
+            var course = await _context.Courses.Include(c => c.Subject).FirstOrDefaultAsync(c => c.CourseID == id);
+
+            if (course == null)
+            {
+                return NotFound();
+            }
+
+            return _mapper.Map<CourseSubjectDTO>(course);
         }
 
         // PUT: api/Courses/5

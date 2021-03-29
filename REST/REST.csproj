@@ -7,7 +7,10 @@
   <ItemGroup>
     <Compile Include="..\Common\Data\CourseDTO.cs" Link="Data\CourseDTO.cs" />
     <Compile Include="..\Common\Data\CourseProfile.cs" Link="Data\CourseProfile.cs" />
+    <Compile Include="..\Common\Data\CourseSubjectDTO .cs" Link="Data\CourseSubjectDTO .cs" />
+    <Compile Include="..\Common\Data\CourseSubjectProfile .cs" Link="Data\CourseSubjectProfile .cs" />
     <Compile Include="..\Common\Data\SchoolContext.cs" Link="Data\SchoolContext.cs" />
+    <Compile Include="..\Common\Data\StudentCourseDTO.cs" Link="Data\StudentCourseDTO.cs" />
     <Compile Include="..\Common\Data\StudentDTO.cs" Link="Data\StudentDTO.cs" />
     <Compile Include="..\Common\Data\StudentProfile.cs" Link="Data\StudentProfile.cs" />
     <Compile Include="..\Common\Data\SubjectDTO.cs" Link="Data\SubjectDTO.cs" />

@@ -25,12 +25,6 @@ namespace REST.Controllers
         }
 
         // GET: api/Students
-        /*[HttpGet]
-        public async Task<ActionResult<IEnumerable<Student>>> GetStudents()
-        {
-            return await _context.Students.ToListAsync();
-        }*/
-
         [HttpGet]
         public async Task<ActionResult<IEnumerable<StudentDTO>>> GetStudents()
         {

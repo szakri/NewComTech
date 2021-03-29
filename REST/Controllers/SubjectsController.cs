@@ -32,12 +32,6 @@ namespace REST.Controllers
             return _mapper.Map<List<SubjectDTO>>(subjects);
         }
 
-        /*[HttpGet]
-        public async Task<ActionResult<IEnumerable<Subject>>> GetSubjects()
-        {
-            return await _context.Subjects.ToListAsync();
-        }*/
-
         // GET: api/Subjects/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Subject>> GetSubject(int id)
