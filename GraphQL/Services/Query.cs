@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using Common.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,19 +20,28 @@ namespace GraphQL.Services
             _mapper = mapper;
         }
 
-        public List<StudentDTO> GetStudents()
+        public async Task<IEnumerable<StudentDTO>> GetStudents()
         {
-            return _mapper.Map<List<StudentDTO>>(_context.Students.ToList());
+            var students = await _context.Students.ToListAsync();
+            return _mapper.Map<List<StudentDTO>>(students);
         }
 
-        public List<CourseDTO> GetCourses()
+        public async Task<IEnumerable<CourseDTO>> GetCourses()
         {
-            return _mapper.Map<List<CourseDTO>>(_context.Courses.ToList());
+            var courses = await _context.Courses.ToListAsync();
+            return _mapper.Map<List<CourseDTO>>(courses);
         }
 
-        public List<SubjectDTO> GetSubjects()
+        public async Task<IEnumerable<CourseSubjectDTO>> GetCoursesWithSubject()
         {
-            return _mapper.Map<List<SubjectDTO>>(_context.Subjects.ToList());
+            var courses = await _context.Courses.Include(c => c.Subject).ToListAsync();
+            return _mapper.Map<List<CourseSubjectDTO>>(courses);
+        }
+
+        public async Task<IEnumerable<SubjectDTO>> GetSubjects()
+        {
+            var subjects = await _context.Subjects.ToListAsync();
+            return _mapper.Map<List<SubjectDTO>>(subjects);
         }
     }
 }
