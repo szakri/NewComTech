@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
     <Protobuf Include="Protos\school.proto" GrpcServices="Server" />
   </ItemGroup>
 

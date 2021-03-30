@@ -7,8 +7,20 @@ package school;
 service School
 {
 	rpc GetCourses (EmptyMessage) returns (stream CourseDTO);
+	rpc GetCourse (Id) returns (CourseDTO);
+	rpc GetCoursesWithSubject (EmptyMessage) returns (stream CourseSubjectDTO);
+	rpc GetCourseWithSubject (Id) returns (CourseSubjectDTO);
 	rpc GetStudents (EmptyMessage) returns (stream StudentDTO);
+	rpc GetStudent (Id) returns (StudentDTO);
 	rpc GetSubjects (EmptyMessage) returns (stream SubjectDTO);
+	rpc GetSubject (Id) returns (SubjectDTO);
+}
+
+message EmptyMessage {}
+
+message Id
+{
+	int32 Id = 1;
 }
 
 message CourseDTO
@@ -32,4 +44,12 @@ message SubjectDTO
 	string Name = 1;
 }
 
-message EmptyMessage {}
+message CourseSubjectDTO
+{
+	string Name = 1;
+	string Type = 2;
+	int32 Day = 3;
+	string From = 4;
+	string To = 5;
+	SubjectDTO subject = 6;
+}
