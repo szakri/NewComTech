@@ -1,12 +1,13 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System;
 
 namespace Common.Data
 {
-    public class StudentDTO
+    public class CourseStudentDTO
     {
-        public int ID { get; set; }
         public string Neptun { get; set; }
         public string Name { get; set; }
         public DateTime DayOfBirth { get; set; }
+        public IEnumerable<CourseDTO> Course { get; set; }
     }
 }

@@ -4,6 +4,7 @@ namespace Common.Data
 {
     public class CourseSubjectDTO
     {
+        public int CourseID { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
         public DayOfWeek Day { get; set; }
