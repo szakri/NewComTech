@@ -22,6 +22,7 @@ namespace GrpcServer.Data
         {
             return new CourseSubjectDTO
             {
+                CourseID = source.CourseID,
                 Name = source.Name,
                 Type = source.Type,
                 Day = (int)source.Day,

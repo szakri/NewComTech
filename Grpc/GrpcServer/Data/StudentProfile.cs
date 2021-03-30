@@ -22,6 +22,7 @@ namespace GrpcServer.Data
         {
             return new StudentDTO
             {
+                ID = source.StudentID,
                 Name = source.Name,
                 Neptun = source.Neptun,
                 DayOfBirth = String.Format("{0:yyyy.MM.dd}", source.DayOfBirth.Date)

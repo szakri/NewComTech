@@ -33,10 +33,10 @@ namespace GrpcServer.Services
 
         public override async Task<StudentDTO> GetStudent(Id request, ServerCallContext context)
         {
-            var student = await _context.Students.FindAsync(request.Id_);
+            var student = await _context.Students.FindAsync(request.ID);
             if (student == null)
             {
-                throw new RpcException(new Status(StatusCode.InvalidArgument, "No such student exists (ID = " + request.Id_ + ")!"));
+                throw new RpcException(new Status(StatusCode.InvalidArgument, "No such student exists (ID = " + request.ID + ")!"));
             }
             return _mapper.Map<StudentDTO>(student);
         }
@@ -52,10 +52,10 @@ namespace GrpcServer.Services
 
         public override async Task<CourseDTO> GetCourse(Id request, ServerCallContext context)
         {
-            var course = await _context.Courses.FindAsync(request.Id_);
+            var course = await _context.Courses.FindAsync(request.ID);
             if (course == null)
             {
-                throw new RpcException(new Status(StatusCode.InvalidArgument, "No such course exists (ID = " + request.Id_ + ")!"));
+                throw new RpcException(new Status(StatusCode.InvalidArgument, "No such course exists (ID = " + request.ID + ")!"));
             }
             return _mapper.Map<CourseDTO>(course);
         }
@@ -71,10 +71,10 @@ namespace GrpcServer.Services
 
         public override async Task<CourseSubjectDTO> GetCourseWithSubject(Id request, ServerCallContext context)
         {
-            var course = await _context.Courses.Include(c => c.Subject).FirstOrDefaultAsync(c => c.CourseID == request.Id_);
+            var course = await _context.Courses.Include(c => c.Subject).FirstOrDefaultAsync(c => c.CourseID == request.ID);
             if (course == null)
             {
-                throw new RpcException(new Status(StatusCode.InvalidArgument, "No such course exists (ID = " + request.Id_ + ")!"));
+                throw new RpcException(new Status(StatusCode.InvalidArgument, "No such course exists (ID = " + request.ID + ")!"));
             }
             return _mapper.Map<CourseSubjectDTO>(course);
         }
@@ -90,10 +90,10 @@ namespace GrpcServer.Services
 
         public override async Task<SubjectDTO> GetSubject(Id request, ServerCallContext context)
         {
-            var subject = await _context.Subjects.FindAsync(request.Id_);
+            var subject = await _context.Subjects.FindAsync(request.ID);
             if (subject == null)
             {
-                throw new RpcException(new Status(StatusCode.InvalidArgument, "No such subject exists (ID = " + request.Id_ + ")!"));
+                throw new RpcException(new Status(StatusCode.InvalidArgument, "No such subject exists (ID = " + request.ID + ")!"));
             }
             return _mapper.Map<SubjectDTO>(subject);
         }

@@ -26,9 +26,9 @@ namespace GrpcClient
 
             try
             {
-                StudentDTO student = client.GetStudent(new Id { Id_ = 1 });
+                StudentDTO student = client.GetStudent(new Id { ID = 1 });
                 Console.WriteLine(student);
-                student = client.GetStudent(new Id { Id_ = 100000 });
+                student = client.GetStudent(new Id { ID = 100000 });
                 Console.WriteLine(student);
             }
             catch (Exception ex)
@@ -51,9 +51,9 @@ namespace GrpcClient
 
             try
             {
-                CourseDTO course = client.GetCourse(new Id { Id_ = 1 });
+                CourseDTO course = client.GetCourse(new Id { ID = 1 });
                 Console.WriteLine(course);
-                course = client.GetCourse(new Id { Id_ = 100000 });
+                course = client.GetCourse(new Id { ID = 100000 });
                 Console.WriteLine(course);
             }
             catch (Exception ex)
@@ -76,9 +76,9 @@ namespace GrpcClient
 
             try
             {
-                CourseSubjectDTO course = client.GetCourseWithSubject(new Id { Id_ = 1 });
+                CourseSubjectDTO course = client.GetCourseWithSubject(new Id { ID = 1 });
                 Console.WriteLine(course);
-                course = client.GetCourseWithSubject(new Id { Id_ = 100000 });
+                course = client.GetCourseWithSubject(new Id { ID = 100000 });
                 Console.WriteLine(course);
             }
             catch (Exception ex)
@@ -101,9 +101,9 @@ namespace GrpcClient
 
             try
             {
-                SubjectDTO subject = client.GetSubject(new Id { Id_ = 1 });
+                SubjectDTO subject = client.GetSubject(new Id { ID = 1 });
                 Console.WriteLine(subject);
-                subject = client.GetSubject(new Id { Id_ = 100000 });
+                subject = client.GetSubject(new Id { ID = 100000 });
                 Console.WriteLine(subject);
             }
             catch (Exception ex)

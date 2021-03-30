@@ -20,36 +20,40 @@ message EmptyMessage {}
 
 message Id
 {
-	int32 Id = 1;
+	int32 ID = 1;
 }
 
 message CourseDTO
 {
-	string Name = 1;
-	string Type = 2;
-	int32 Day = 3;
-	string From = 4;
-	string To = 5;
+	int32 ID = 1;
+	string Name = 2;
+	string Type = 4;
+	int32 Day = 5;
+	string From = 6;
+	string To = 7;
 }
 
 message StudentDTO
 {
-	string Name = 1;
-	string Neptun = 2;
-	string DayOfBirth = 3;
+	int32 ID = 1;
+	string Name = 2;
+	string Neptun = 3;
+	string DayOfBirth = 4;
 }
 
 message SubjectDTO
 {
-	string Name = 1;
+	int32 ID = 1;
+	string Name = 2;
 }
 
 message CourseSubjectDTO
 {
-	string Name = 1;
-	string Type = 2;
-	int32 Day = 3;
-	string From = 4;
-	string To = 5;
-	SubjectDTO subject = 6;
+	int32 CourseID = 1;
+	string Name = 2;
+	string Type = 3;
+	int32 Day = 4;
+	string From = 5;
+	string To = 6;
+	SubjectDTO subject = 7;
 }

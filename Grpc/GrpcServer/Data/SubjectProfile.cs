@@ -22,6 +22,7 @@ namespace GrpcServer.Data
         {
             return new SubjectDTO
             {
+                ID = source.SubjectID,
                 Name = source.Name
             };
         }
