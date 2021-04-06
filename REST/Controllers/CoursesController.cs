@@ -28,17 +28,72 @@ namespace REST.Controllers
 
         // GET: api/Courses
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CourseDTO>>> GetCourses([FromQuery] int? pageNumber, [FromQuery] int pageSize = 10)
+        public async Task<ActionResult<IEnumerable<CourseDTO>>> GetCourses(
+            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string sortBy = null)
         {
-            var courses = _context.Courses;
+            var courses = from c in _context.Courses
+                           select c;
+            if (sortBy != null)
+            {
+                bool desc = sortBy.Contains(".desc");
+                sortBy = sortBy.Contains(".") ? sortBy.Remove(sortBy.IndexOf(".")) : sortBy;
+                switch (sortBy.ToLower())
+                {
+                    case "name":
+                        courses = (desc) ? courses.OrderByDescending(c => c.Name) : courses.OrderBy(c => c.Name);
+                        break;
+                    case "type":
+                        courses = (desc) ? courses.OrderByDescending(c => c.Type) : courses.OrderBy(c => c.Type);
+                        break;
+                    case "day":
+                        courses = (desc) ? courses.OrderByDescending(c => c.Day) : courses.OrderBy(c => c.Day);
+                        break;
+                    case "from":
+                        courses = (desc) ? courses.OrderByDescending(c => c.From) : courses.OrderBy(c => c.From);
+                        break;
+                    case "to":
+                        courses = (desc) ? courses.OrderByDescending(c => c.To) : courses.OrderBy(c => c.To);
+                        break;
+                    default:
+                        break;
+                }
+            }
             return _mapper.Map<List<CourseDTO>>(await PaginatedList<Course>.CreateAsync(courses, pageNumber ?? 1, pageSize));
         }
 
         // GET: api/Courses/withSubject
         [HttpGet("withSubject")]
-        public async Task<ActionResult<IEnumerable<CourseSubjectDTO>>> GetCoursesWithSubject([FromQuery] int? pageNumber, [FromQuery] int pageSize = 10)
+        public async Task<ActionResult<IEnumerable<CourseSubjectDTO>>> GetCoursesWithSubject(
+            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string sortBy = null)
         {
-            var courses = _context.Courses.Include(c => c.Subject);
+            var courses = from c in _context.Courses.Include(c => c.Subject)
+                          select c;
+            if (sortBy != null)
+            {
+                bool desc = sortBy.Contains(".desc");
+                sortBy = sortBy.Contains(".") ? sortBy.Remove(sortBy.IndexOf(".")) : sortBy;
+                switch (sortBy.ToLower())
+                {
+                    case "name":
+                        courses = (desc) ? courses.OrderByDescending(c => c.Name) : courses.OrderBy(c => c.Name);
+                        break;
+                    case "type":
+                        courses = (desc) ? courses.OrderByDescending(c => c.Type) : courses.OrderBy(c => c.Type);
+                        break;
+                    case "day":
+                        courses = (desc) ? courses.OrderByDescending(c => c.Day) : courses.OrderBy(c => c.Day);
+                        break;
+                    case "from":
+                        courses = (desc) ? courses.OrderByDescending(c => c.From) : courses.OrderBy(c => c.From);
+                        break;
+                    case "to":
+                        courses = (desc) ? courses.OrderByDescending(c => c.To) : courses.OrderBy(c => c.To);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            //var courses = _context.Courses.Include(c => c.Subject);
             return _mapper.Map<List<CourseSubjectDTO>>(await PaginatedList<Course>.CreateAsync(courses, pageNumber ?? 1, pageSize));
         }
 

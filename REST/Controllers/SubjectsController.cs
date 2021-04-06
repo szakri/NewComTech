@@ -27,9 +27,20 @@ namespace REST.Controllers
 
         // GET: api/Subjects
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<SubjectDTO>>> GetSubjects([FromQuery] int? pageNumber, [FromQuery] int pageSize = 10)
+        public async Task<ActionResult<IEnumerable<SubjectDTO>>> GetSubjects(
+            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string sortBy = null)
         {
-            var subjects = _context.Subjects;
+            var subjects = from s in _context.Subjects
+                           select s;
+            if (sortBy != null)
+            {
+                bool desc = sortBy.Contains(".desc");
+                sortBy = sortBy.Contains(".") ? sortBy.Remove(sortBy.IndexOf(".")) : sortBy.ToLower();
+                if (sortBy == "name")
+                {
+                    subjects = (desc) ? subjects.OrderByDescending(c => c.Name) : subjects.OrderBy(c => c.Name);
+                }
+            }
             return _mapper.Map<List<SubjectDTO>>(await PaginatedList<Subject>.CreateAsync(subjects, pageNumber ?? 1, pageSize));
         }
 
