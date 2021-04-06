@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Common.Models;
 using Common.Data;
 using AutoMapper;
+using REST.Data;
 
 namespace REST.Controllers
 {
@@ -26,15 +27,23 @@ namespace REST.Controllers
 
         // GET: api/Students
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<StudentDTO>>> GetStudents()
+        public async Task<ActionResult<IEnumerable<StudentDTO>>> GetStudents([FromQuery] int? pageNumber, [FromQuery] int pageSize = 10)
         {
-            var students = await _context.Students.ToListAsync();
-            return _mapper.Map<List<StudentDTO>>(students);
+            var students = _context.Students;
+            return _mapper.Map<List<StudentDTO>>(await PaginatedList<Student>.CreateAsync(students, pageNumber ?? 1, pageSize));
+        }
+
+        // GET: api/Students/withCourses
+        [HttpGet("withCourses")]
+        public async Task<ActionResult<IEnumerable<StudentCoursesDTO>>> GetStudentsWithCourses()
+        {
+            var students = await _context.Students.Include(s => s.Courses).ToListAsync();
+            return _mapper.Map<List<StudentCoursesDTO>>(students);
         }
 
         // GET: api/Students/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Student>> GetStudent(int id)
+        public async Task<ActionResult<StudentDTO>> GetStudent(int id)
         {
             var student = await _context.Students.FindAsync(id);
 
@@ -43,7 +52,21 @@ namespace REST.Controllers
                 return NotFound();
             }
 
-            return student;
+            return _mapper.Map<StudentDTO>(student);
+        }
+
+        // GET: api/Students/5/withCourses
+        [HttpGet("{id}/withCourses")]
+        public async Task<ActionResult<StudentCoursesDTO>> GetStudentWithCourses(int id)
+        {
+            var student = await _context.Students.Include(s => s.Courses).FirstOrDefaultAsync(s => s.StudentID == id);
+
+            if (student == null)
+            {
+                return NotFound();
+            }
+
+            return _mapper.Map<StudentCoursesDTO>(student);
         }
 
         // PUT: api/Students/5

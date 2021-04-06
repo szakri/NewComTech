@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Common.Data;
 using Common.Models;
 using AutoMapper;
+using REST.Data;
 
 namespace REST.Controllers
 {
@@ -27,18 +28,18 @@ namespace REST.Controllers
 
         // GET: api/Courses
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CourseDTO>>> GetCourses()
+        public async Task<ActionResult<IEnumerable<CourseDTO>>> GetCourses([FromQuery] int? pageNumber, [FromQuery] int pageSize = 10)
         {
-            var courses = await _context.Courses.ToListAsync();
-            return _mapper.Map<List<CourseDTO>>(courses);
+            var courses = _context.Courses;
+            return _mapper.Map<List<CourseDTO>>(await PaginatedList<Course>.CreateAsync(courses, pageNumber ?? 1, pageSize));
         }
 
         // GET: api/Courses/withSubject
         [HttpGet("withSubject")]
-        public async Task<ActionResult<IEnumerable<CourseSubjectDTO>>> GetCoursesWithSubject()
+        public async Task<ActionResult<IEnumerable<CourseSubjectDTO>>> GetCoursesWithSubject([FromQuery] int? pageNumber, [FromQuery] int pageSize = 10)
         {
-            var courses = await _context.Courses.Include(c => c.Subject).ToListAsync();
-            return _mapper.Map<List<CourseSubjectDTO>>(courses);
+            var courses = _context.Courses.Include(c => c.Subject);
+            return _mapper.Map<List<CourseSubjectDTO>>(await PaginatedList<Course>.CreateAsync(courses, pageNumber ?? 1, pageSize));
         }
 
         // GET: api/Courses/5

@@ -16,20 +16,20 @@ namespace Common.Data
         public DbSet<Course> Courses { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Student> Students { get; set; }
-        public DbSet<CourseStudent> CourseStudents { get; set; }
+        public DbSet<CourseStudent> CourseStudent { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CourseStudent>()
-                .HasKey(cs => new { cs.CourseID, cs.StudentID });
+                .HasKey(cs => new { cs.CoursesCourseID, cs.StudentsStudentID });
             modelBuilder.Entity<CourseStudent>()
                 .HasOne(cs => cs.Course)
                 .WithMany(c => c.Students)
-                .HasForeignKey(cs => cs.CourseID);
+                .HasForeignKey(cs => cs.CoursesCourseID);
             modelBuilder.Entity<CourseStudent>()
                 .HasOne(cs => cs.Student)
                 .WithMany(s => s.Courses)
-                .HasForeignKey(cs => cs.StudentID);
+                .HasForeignKey(cs => cs.StudentsStudentID);
         }
 
     }

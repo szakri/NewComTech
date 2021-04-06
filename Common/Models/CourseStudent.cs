@@ -7,9 +7,9 @@ namespace Common.Models
 {
     public class CourseStudent
     {
-        public int CourseID { get; set; }
+        public int CoursesCourseID { get; set; }
         public Course Course { get; set; }
-        public int StudentID { get; set; }
+        public int StudentsStudentID { get; set; }
         public Student Student { get; set; }
     }
 }

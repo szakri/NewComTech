@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Common.Models;
 using Common.Data;
 using AutoMapper;
+using REST.Data;
 
 namespace REST.Controllers
 {
@@ -26,10 +27,10 @@ namespace REST.Controllers
 
         // GET: api/Subjects
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<SubjectDTO>>> GetSubjects()
+        public async Task<ActionResult<IEnumerable<SubjectDTO>>> GetSubjects([FromQuery] int? pageNumber, [FromQuery] int pageSize = 10)
         {
-            var subjects = await _context.Subjects.ToListAsync();
-            return _mapper.Map<List<SubjectDTO>>(subjects);
+            var subjects = _context.Subjects;
+            return _mapper.Map<List<SubjectDTO>>(await PaginatedList<Subject>.CreateAsync(subjects, pageNumber ?? 1, pageSize));
         }
 
         // GET: api/Subjects/5
