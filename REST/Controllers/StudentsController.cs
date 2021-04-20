@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Common.Models;
 using Common.Data;
 using AutoMapper;
-using REST.Data;
+using System.Linq.Dynamic.Core;
 
 namespace REST.Controllers
 {
@@ -28,58 +28,20 @@ namespace REST.Controllers
         // GET: api/Students
         [HttpGet]
         public async Task<ActionResult<IEnumerable<StudentDTO>>> GetStudents(
-            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string sortBy = null)
+            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string orderBy = null)
         {
-            var students = from s in _context.Students
-                           select s;
-            if (sortBy != null)
-            {
-                bool desc = sortBy.Contains(".desc");
-                sortBy = sortBy.Contains(".") ? sortBy.Remove(sortBy.IndexOf(".")) : sortBy;
-                switch (sortBy.ToLower())
-                {
-                    case "neptun":
-                        students = (desc) ? students.OrderByDescending(s => s.Neptun) : students.OrderBy(s => s.Neptun);
-                        break;
-                    case "name":
-                        students = (desc) ? students.OrderByDescending(s => s.Name) : students.OrderBy(s => s.Name);
-                        break;
-                    case "dayofbirth":
-                        students = (desc) ? students.OrderByDescending(s => s.DayOfBirth) : students.OrderBy(s => s.DayOfBirth);
-                        break;
-                    default:
-                        break;
-                }
-            }
+            if (orderBy == null) orderBy = "studentId";
+            var students = _context.Students.OrderBy(orderBy);
             return _mapper.Map<List<StudentDTO>>(await PaginatedList<Student>.CreateAsync(students, pageNumber ?? 1, pageSize));
         }
 
         // GET: api/Students/withCourses
         [HttpGet("withCourses")]
         public async Task<ActionResult<IEnumerable<StudentCoursesDTO>>> GetStudentsWithCourses(
-            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string sortBy = null)
+            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string orderBy = null)
         {
-            var students = from s in _context.Students.Include(s => s.Courses)
-                           select s;
-            if (sortBy != null)
-            {
-                bool desc = sortBy.Contains(".desc");
-                sortBy = sortBy.Contains(".") ? sortBy.Remove(sortBy.IndexOf(".")) : sortBy;
-                switch (sortBy.ToLower())
-                {
-                    case "neptun":
-                        students = (desc) ? students.OrderByDescending(s => s.Neptun) : students.OrderBy(s => s.Neptun);
-                        break;
-                    case "name":
-                        students = (desc) ? students.OrderByDescending(s => s.Name) : students.OrderBy(s => s.Name);
-                        break;
-                    case "dayofbirth":
-                        students = (desc) ? students.OrderByDescending(s => s.DayOfBirth) : students.OrderBy(s => s.DayOfBirth);
-                        break;
-                    default:
-                        break;
-                }
-            }
+            if (orderBy == null) orderBy = "studentId";
+            var students = _context.Students.Include(s => s.Courses).OrderBy(orderBy);
             return _mapper.Map<List<StudentCoursesDTO>>(await PaginatedList<Student>.CreateAsync(students, pageNumber ?? 1, pageSize));
         }
 
@@ -101,7 +63,7 @@ namespace REST.Controllers
         [HttpGet("{id}/withCourses")]
         public async Task<ActionResult<StudentCoursesDTO>> GetStudentWithCourses(int id)
         {
-            var student = await _context.Students.Include(s => s.Courses).FirstOrDefaultAsync(s => s.StudentID == id);
+            var student = await _context.Students.Include(s => s.Courses).FirstOrDefaultAsync(s => s.StudentId == id);
 
             if (student == null)
             {
@@ -111,18 +73,32 @@ namespace REST.Controllers
             return _mapper.Map<StudentCoursesDTO>(student);
         }
 
+        // GET: api/Students/5/QR
+        [HttpGet("{id}/QR")]
+        public async Task<ActionResult<StudentQRCodeDTO>> GetStudentQRCode(int id)
+        {
+            var student = await _context.Students.FindAsync(id);
+
+            if (student == null)
+            {
+                return NotFound();
+            }
+
+            return _mapper.Map<StudentQRCodeDTO>(student);
+        }
+
         // PUT: api/Students/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutStudent(int id, Student student)
+        public async Task<IActionResult> PutStudent(int id, [FromBody] StudentDTO student)
         {
-            if (id != student.StudentID)
+            if (id != student.StudentId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(student).State = EntityState.Modified;
+            _context.Entry(_mapper.Map<Student>(student)).State = EntityState.Modified;
 
             try
             {
@@ -147,17 +123,18 @@ namespace REST.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Student>> PostStudent(Student student)
+        public async Task<ActionResult<StudentDTO>> PostStudent([FromBody] StudentDTO student)
         {
-            _context.Students.Add(student);
+            Student studentEntity = _mapper.Map<Student>(student);
+            _context.Students.Add(studentEntity);
             await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetStudent", new { id = student.StudentID }, student);
+            student = _mapper.Map<StudentDTO>(studentEntity);
+            return CreatedAtAction("GetStudent", new { id = student.StudentId }, student);
         }
 
         // DELETE: api/Students/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Student>> DeleteStudent(int id)
+        public async Task<ActionResult<StudentDTO>> DeleteStudent(int id)
         {
             var student = await _context.Students.FindAsync(id);
             if (student == null)
@@ -168,12 +145,12 @@ namespace REST.Controllers
             _context.Students.Remove(student);
             await _context.SaveChangesAsync();
 
-            return student;
+            return _mapper.Map<StudentDTO>(student);
         }
 
         private bool StudentExists(int id)
         {
-            return _context.Students.Any(e => e.StudentID == id);
+            return _context.Students.Any(e => e.StudentId == id);
         }
     }
 }

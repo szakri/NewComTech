@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Common.Data;
 using Common.Models;
 using AutoMapper;
-using REST.Data;
+using System.Linq.Dynamic.Core;
 
 namespace REST.Controllers
 {
@@ -29,71 +29,20 @@ namespace REST.Controllers
         // GET: api/Courses
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CourseDTO>>> GetCourses(
-            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string sortBy = null)
+            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string orderBy = null)
         {
-            var courses = from c in _context.Courses
-                           select c;
-            if (sortBy != null)
-            {
-                bool desc = sortBy.Contains(".desc");
-                sortBy = sortBy.Contains(".") ? sortBy.Remove(sortBy.IndexOf(".")) : sortBy;
-                switch (sortBy.ToLower())
-                {
-                    case "name":
-                        courses = (desc) ? courses.OrderByDescending(c => c.Name) : courses.OrderBy(c => c.Name);
-                        break;
-                    case "type":
-                        courses = (desc) ? courses.OrderByDescending(c => c.Type) : courses.OrderBy(c => c.Type);
-                        break;
-                    case "day":
-                        courses = (desc) ? courses.OrderByDescending(c => c.Day) : courses.OrderBy(c => c.Day);
-                        break;
-                    case "from":
-                        courses = (desc) ? courses.OrderByDescending(c => c.From) : courses.OrderBy(c => c.From);
-                        break;
-                    case "to":
-                        courses = (desc) ? courses.OrderByDescending(c => c.To) : courses.OrderBy(c => c.To);
-                        break;
-                    default:
-                        break;
-                }
-            }
+            if (orderBy == null) orderBy = "courseId";
+            var courses = _context.Courses.OrderBy(orderBy);
             return _mapper.Map<List<CourseDTO>>(await PaginatedList<Course>.CreateAsync(courses, pageNumber ?? 1, pageSize));
         }
 
         // GET: api/Courses/withSubject
         [HttpGet("withSubject")]
         public async Task<ActionResult<IEnumerable<CourseSubjectDTO>>> GetCoursesWithSubject(
-            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string sortBy = null)
+            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string orderBy = null)
         {
-            var courses = from c in _context.Courses.Include(c => c.Subject)
-                          select c;
-            if (sortBy != null)
-            {
-                bool desc = sortBy.Contains(".desc");
-                sortBy = sortBy.Contains(".") ? sortBy.Remove(sortBy.IndexOf(".")) : sortBy;
-                switch (sortBy.ToLower())
-                {
-                    case "name":
-                        courses = (desc) ? courses.OrderByDescending(c => c.Name) : courses.OrderBy(c => c.Name);
-                        break;
-                    case "type":
-                        courses = (desc) ? courses.OrderByDescending(c => c.Type) : courses.OrderBy(c => c.Type);
-                        break;
-                    case "day":
-                        courses = (desc) ? courses.OrderByDescending(c => c.Day) : courses.OrderBy(c => c.Day);
-                        break;
-                    case "from":
-                        courses = (desc) ? courses.OrderByDescending(c => c.From) : courses.OrderBy(c => c.From);
-                        break;
-                    case "to":
-                        courses = (desc) ? courses.OrderByDescending(c => c.To) : courses.OrderBy(c => c.To);
-                        break;
-                    default:
-                        break;
-                }
-            }
-            //var courses = _context.Courses.Include(c => c.Subject);
+            if (orderBy == null) orderBy = "courseId";
+            var courses = _context.Courses.Include(c => c.Subject).OrderBy(orderBy);
             return _mapper.Map<List<CourseSubjectDTO>>(await PaginatedList<Course>.CreateAsync(courses, pageNumber ?? 1, pageSize));
         }
 
@@ -115,7 +64,7 @@ namespace REST.Controllers
         [HttpGet("{id}/withSubject")]
         public async Task<ActionResult<CourseSubjectDTO>> GetCoursesWithSubject(int id)
         {
-            var course = await _context.Courses.Include(c => c.Subject).FirstOrDefaultAsync(c => c.CourseID == id);
+            var course = await _context.Courses.Include(c => c.Subject).FirstOrDefaultAsync(c => c.CourseId == id);
 
             if (course == null)
             {
@@ -129,14 +78,14 @@ namespace REST.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCourse(int id, Course course)
+        public async Task<IActionResult> PutCourse(int id, [FromBody] CourseDTO course)
         {
-            if (id != course.CourseID)
+            if (id != course.CourseId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(course).State = EntityState.Modified;
+            _context.Entry(_mapper.Map<Student>(course)).State = EntityState.Modified;
 
             try
             {
@@ -161,17 +110,18 @@ namespace REST.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Course>> PostCourse(Course course)
+        public async Task<ActionResult<CourseDTO>> PostCourse([FromBody] CourseDTO course)
         {
-            _context.Courses.Add(course);
+            Course courseEntity = _mapper.Map<Course>(course);
+            _context.Courses.Add(courseEntity);
             await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetCourse", new { id = course.CourseID }, course);
+            course = _mapper.Map<CourseDTO>(courseEntity);
+            return CreatedAtAction("GetCourse", new { id = course.CourseId }, course);
         }
 
         // DELETE: api/Courses/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Course>> DeleteCourse(int id)
+        public async Task<ActionResult<CourseDTO>> DeleteCourse(int id)
         {
             var course = await _context.Courses.FindAsync(id);
             if (course == null)
@@ -182,12 +132,12 @@ namespace REST.Controllers
             _context.Courses.Remove(course);
             await _context.SaveChangesAsync();
 
-            return course;
+            return _mapper.Map<CourseDTO>(course);
         }
 
         private bool CourseExists(int id)
         {
-            return _context.Courses.Any(e => e.CourseID == id);
+            return _context.Courses.Any(e => e.CourseId == id);
         }
     }
 }
