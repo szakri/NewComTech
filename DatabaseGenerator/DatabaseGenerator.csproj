@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\..\Documents\GitHub\BME\Önlabor\NewComTech\Common\Data\SchoolContext.cs" Link="Data\SchoolContext.cs" />
+    <Compile Include="..\..\..\Documents\GitHub\BME\Önlabor\NewComTech\Common\Models\Attendance.cs" Link="Models\Attendance.cs" />
+    <Compile Include="..\..\..\Documents\GitHub\BME\Önlabor\NewComTech\Common\Models\Course.cs" Link="Models\Course.cs" />
+    <Compile Include="..\..\..\Documents\GitHub\BME\Önlabor\NewComTech\Common\Models\Student.cs" Link="Models\Student.cs" />
+    <Compile Include="..\..\..\Documents\GitHub\BME\Önlabor\NewComTech\Common\Models\Subject.cs" Link="Models\Subject.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+</Project>
