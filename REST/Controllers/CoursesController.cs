@@ -85,7 +85,7 @@ namespace REST.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(_mapper.Map<Student>(course)).State = EntityState.Modified;
+            _context.Entry(_mapper.Map<Course>(course)).State = EntityState.Modified;
 
             try
             {
@@ -112,6 +112,7 @@ namespace REST.Controllers
         [HttpPost]
         public async Task<ActionResult<CourseDTO>> PostCourse([FromBody] CourseDTO course)
         {
+            if (course.CourseId != null) course.CourseId = null;
             Course courseEntity = _mapper.Map<Course>(course);
             _context.Courses.Add(courseEntity);
             await _context.SaveChangesAsync();

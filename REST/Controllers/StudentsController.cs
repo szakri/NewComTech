@@ -125,6 +125,7 @@ namespace REST.Controllers
         [HttpPost]
         public async Task<ActionResult<StudentDTO>> PostStudent([FromBody] StudentDTO student)
         {
+            if (student.StudentId != null) student.StudentId = null;
             Student studentEntity = _mapper.Map<Student>(student);
             _context.Students.Add(studentEntity);
             await _context.SaveChangesAsync();

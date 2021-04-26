@@ -87,6 +87,7 @@ namespace REST.Controllers
         [HttpPost]
         public async Task<ActionResult<SubjectDTO>> PostSubject(SubjectDTO subject)
         {
+            if (subject.SubjectId != null) subject.SubjectId = null;
             Subject subjectEntity = _mapper.Map<Subject>(subject);
             _context.Subjects.Add(subjectEntity);
             await _context.SaveChangesAsync();

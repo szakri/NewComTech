@@ -91,6 +91,7 @@ namespace REST.Controllers
         [HttpPost]
         public async Task<ActionResult<AttendanceDTO>> PostAttendance(AttendanceDTO attendance)
         {
+            if (attendance.AttendanceId != null) attendance.AttendanceId = null;
             Attendance attendanceEntity = _mapper.Map<Attendance>(attendance);
             _context.Attendances.Add(attendanceEntity);
             await _context.SaveChangesAsync();
