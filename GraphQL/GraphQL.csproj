@@ -1,19 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="..\Common\Data\CourseDTO.cs" Link="Data\CourseDTO.cs" />
-    <Compile Include="..\Common\Data\CourseProfile.cs" Link="Data\CourseProfile.cs" />
-    <Compile Include="..\Common\Data\CourseSubjectDTO .cs" Link="Data\CourseSubjectDTO .cs" />
-    <Compile Include="..\Common\Data\CourseSubjectProfile .cs" Link="Data\CourseSubjectProfile .cs" />
     <Compile Include="..\Common\Data\SchoolContext.cs" Link="Data\SchoolContext.cs" />
-    <Compile Include="..\Common\Data\StudentDTO.cs" Link="Data\StudentDTO.cs" />
-    <Compile Include="..\Common\Data\StudentProfile.cs" Link="Data\StudentProfile.cs" />
-    <Compile Include="..\Common\Data\SubjectDTO.cs" Link="Data\SubjectDTO.cs" />
-    <Compile Include="..\Common\Data\SubjectProfile.cs" Link="Data\SubjectProfile.cs" />
+    <Compile Include="..\Common\Models\Attendance.cs" Link="Models\Attendance.cs" />
     <Compile Include="..\Common\Models\Course.cs" Link="Models\Course.cs" />
     <Compile Include="..\Common\Models\CourseStudent.cs" Link="Models\CourseStudent.cs" />
     <Compile Include="..\Common\Models\Student.cs" Link="Models\Student.cs" />
@@ -25,12 +18,12 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="HotChocolate.AspNetCore" Version="11.0.9" />
     <PackageReference Include="HotChocolate.AspNetCore.Playground" Version="10.5.5" />
+    <PackageReference Include="HotChocolate.Data.EntityFramework" Version="11.2.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Data\" />
   </ItemGroup>
 
 

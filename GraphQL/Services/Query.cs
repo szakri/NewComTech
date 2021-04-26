@@ -1,47 +1,63 @@
 ﻿using AutoMapper;
 using Common.Data;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
+using HotChocolate.Types;
+using HotChocolate;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Collections.Generic;
+using HotChocolate.Data;
+using Common.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace GraphQL.Services
 {
     public class Query
     {
-        private readonly SchoolContext _context;
-        private readonly IMapper _mapper;
+        [UseDbContext(typeof(SchoolContext))]
+        [UsePaging]
+        [UseProjection]
+        [UseFiltering]
+        [UseSorting]
+        public IQueryable<Student> GetStudents([ScopedService] SchoolContext context) =>
+            context.Students.Include(s => s.Courses);
 
-        public Query(SchoolContext context, IMapper mapper)
-        {
-            _context = context;
-            _mapper = mapper;
-        }
+        [UseDbContext(typeof(SchoolContext))]
+        public Student GetStudent([ScopedService] SchoolContext context, int id) =>
+            context.Students.Include(s => s.Courses).FirstOrDefault(s => s.StudentId == id);
 
-        public async Task<IEnumerable<StudentDTO>> GetStudents()
-        {
-            var students = await _context.Students.ToListAsync();
-            return _mapper.Map<List<StudentDTO>>(students);
-        }
+        [UseDbContext(typeof(SchoolContext))]
+        [UsePaging]
+        [UseProjection]
+        [UseFiltering]
+        [UseSorting]
+        public IQueryable<Course> GetCourses([ScopedService] SchoolContext context) =>
+            context.Courses.Include(c => c.Subject);
 
-        public async Task<IEnumerable<CourseDTO>> GetCourses()
-        {
-            var courses = await _context.Courses.ToListAsync();
-            return _mapper.Map<List<CourseDTO>>(courses);
-        }
+        [UseDbContext(typeof(SchoolContext))]
+        public Course GetCourse([ScopedService] SchoolContext context, int id) =>
+            context.Courses.Include(c => c.Subject).FirstOrDefault(c => c.CourseId == id);
 
-        public async Task<IEnumerable<CourseSubjectDTO>> GetCoursesWithSubject()
-        {
-            var courses = await _context.Courses.Include(c => c.Subject).ToListAsync();
-            return _mapper.Map<List<CourseSubjectDTO>>(courses);
-        }
+        [UseDbContext(typeof(SchoolContext))]
+        [UsePaging]
+        [UseProjection]
+        [UseFiltering]
+        [UseSorting]
+        public IQueryable<Subject> GetSubjects([ScopedService] SchoolContext context) =>
+            context.Subjects;
 
-        public async Task<IEnumerable<SubjectDTO>> GetSubjects()
-        {
-            var subjects = await _context.Subjects.ToListAsync();
-            return _mapper.Map<List<SubjectDTO>>(subjects);
-        }
+        [UseDbContext(typeof(SchoolContext))]
+        public Subject GetSubject([ScopedService] SchoolContext context, int id) =>
+            context.Subjects.Find(id);
+
+        [UseDbContext(typeof(SchoolContext))]
+        [UsePaging]
+        [UseProjection]
+        [UseFiltering]
+        [UseSorting]
+        public IQueryable<Attendance> GetAttendances([ScopedService] SchoolContext context) =>
+            context.Attendances.Include(a => a.Course).Include(a => a.Student);
+
+        [UseDbContext(typeof(SchoolContext))]
+        public Attendance GetAttendance([ScopedService] SchoolContext context, int id) =>
+            context.Attendances.Include(a => a.Course).Include(a => a.Student).FirstOrDefault(a => a.AttendanceId == id);
     }
 }
