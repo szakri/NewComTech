@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "Protos/school.proto";
+
+option csharp_namespace = "GrpcServer.Protos";
+
+package school;
+
+service Attendances
+{
+	rpc GetAttendances (QueryParams) returns (stream AttendanceDTO);
+	rpc GetAttendance (ID) returns (AttendanceDTO);
+	rpc AddAttendance (AttendanceDTO) returns (AttendanceDTO);
+	rpc ModifyAttendance (ChangeAttendanceDTO) returns (AttendanceDTO);
+	rpc DeleteAttendance (ID) returns (AttendanceDTO);
+}

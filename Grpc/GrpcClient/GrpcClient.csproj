@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +16,10 @@
 
   <ItemGroup>
     <Protobuf Include="Protos\school.proto" GrpcServices="Client" />
+    <Protobuf Include="Protos\students.proto" GrpcServices="Client" />
+    <Protobuf Include="Protos\courses.proto" GrpcServices="Client" />
+    <Protobuf Include="Protos\subjects.proto" GrpcServices="Client" />
+    <Protobuf Include="Protos\attendances.proto" GrpcServices="Client" />
   </ItemGroup>
 
 

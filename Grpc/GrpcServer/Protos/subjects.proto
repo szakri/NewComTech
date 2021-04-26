@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "Protos/school.proto";
+
+option csharp_namespace = "GrpcServer.Protos";
+
+package school;
+
+service Subjects
+{
+	rpc GetSubjects (QueryParams) returns (stream SubjectDTO);
+	rpc GetSubject (ID) returns (SubjectDTO);
+	rpc AddSubject (SubjectDTO) returns (SubjectDTO);
+	rpc ModifySubject (ChangeSubjectDTO) returns (SubjectDTO);
+	rpc DeleteSubject (ID) returns (SubjectDTO);
+}

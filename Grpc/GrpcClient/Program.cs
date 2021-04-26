@@ -11,9 +11,15 @@ namespace GrpcClient
         static async Task Main(string[] args)
         {
             using var channel = GrpcChannel.ForAddress("https://localhost:5001");
-            var client = new School.SchoolClient(channel);
 
-            using (var call = client.GetStudents(new EmptyMessage()))
+            var studentClient = new Students.StudentsClient(channel);
+            var courseClient = new Courses.CoursesClient(channel);
+            var subjectClient = new Subjects.SubjectsClient(channel);
+            var attendanceClient = new Attendances.AttendancesClient(channel);
+
+            Console.WriteLine("GetStudents---------------------------------------");
+
+            using (var call = studentClient.GetStudents(new QueryParams { PageSize = 5, OrderBy = "name desc" }))
             {
                 while (await call.ResponseStream.MoveNext())
                 {
@@ -22,73 +28,109 @@ namespace GrpcClient
                 }
             }
 
-            Console.WriteLine("---------------------------------------");
+            Console.WriteLine("\nGetStudent---------------------------------------");
 
-            try
-            {
-                StudentDTO student = client.GetStudent(new Id { ID = 1 });
-                Console.WriteLine(student);
-                student = client.GetStudent(new Id { ID = 100000 });
-                Console.WriteLine(student);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            StudentDTO student = await studentClient.GetStudentAsync(new ID { Value = 1 });
+            Console.WriteLine(student);
 
-            Console.WriteLine("---------------------------------------");
+            Console.WriteLine("\nGetStudentsWithCourses---------------------------------------");
 
-            using (var call = client.GetCourses(new EmptyMessage()))
+            using (var call = studentClient.GetStudentsWithCourses(new QueryParams { PageSize = 5, OrderBy = "name desc" }))
             {
                 while (await call.ResponseStream.MoveNext())
                 {
-                    CourseDTO s = call.ResponseStream.Current;
+                    StudentCoursesDTO s = call.ResponseStream.Current;
                     Console.WriteLine(s.ToString());
                 }
             }
 
-            Console.WriteLine("---------------------------------------");
+            Console.WriteLine("\nGetStudentWithCourses---------------------------------------");
 
-            try
+            StudentCoursesDTO studentCourses = await studentClient.GetStudentWithCoursesAsync(new ID { Value = 1 });
+            Console.WriteLine(studentCourses);
+
+            Console.WriteLine("\nGetStudentQRCode---------------------------------------");
+
+            StudentQRCodeDTO studentQR = await studentClient.GetStudentQRCodeAsync(new ID { Value = 1 });
+            Console.WriteLine(studentQR);
+
+            Console.WriteLine("\nAddStudent---------------------------------------");
+
+            StudentDTO addedStudent = await studentClient.AddStudentAsync(new StudentDTO { Name = "Test", DayOfBirth = "2000.0.10.", Neptun = "asdfge" });
+            Console.WriteLine("Added " + addedStudent.ToString());
+
+            Console.WriteLine("\nModifyStudent---------------------------------------");
+
+            StudentDTO modifiedStudent = addedStudent;
+            modifiedStudent.Name = "Test2";
+            modifiedStudent = await studentClient.ModifyStudentAsync(new ChangeStudentDTO
             {
-                CourseDTO course = client.GetCourse(new Id { ID = 1 });
-                Console.WriteLine(course);
-                course = client.GetCourse(new Id { ID = 100000 });
-                Console.WriteLine(course);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+                StudentId = addedStudent.StudentId,
+                Student = modifiedStudent
+            });
+            Console.WriteLine("Modified " + modifiedStudent.ToString());
 
-            Console.WriteLine("---------------------------------------");
+            Console.WriteLine("\nDeleteStudent---------------------------------------");
 
-            using (var call = client.GetCoursesWithSubject(new EmptyMessage()))
+            StudentDTO deletedStudent = await studentClient.DeleteStudentAsync(new ID { Value = addedStudent.StudentId });
+            Console.WriteLine("Deleted " + deletedStudent);
+
+            Console.WriteLine("\nGetCourses---------------------------------------");
+
+            using (var call = courseClient.GetCourses(new QueryParams { PageSize = 5, OrderBy = "day desc" }))
             {
                 while (await call.ResponseStream.MoveNext())
                 {
-                    CourseSubjectDTO s = call.ResponseStream.Current;
-                    Console.WriteLine(s.ToString());
+                    CourseDTO c = call.ResponseStream.Current;
+                    Console.WriteLine(c.ToString());
                 }
             }
 
-            Console.WriteLine("---------------------------------------");
+            Console.WriteLine("\nGetCourse---------------------------------------");
 
-            try
+            CourseDTO course = await courseClient.GetCourseAsync(new ID { Value = 1 });
+            Console.WriteLine(course);
+
+            Console.WriteLine("\nGetCoursesWithSubject---------------------------------------");
+
+            using (var call = courseClient.GetCoursesWithSubject(new QueryParams { PageSize = 5, OrderBy = "day desc" }))
             {
-                CourseSubjectDTO course = client.GetCourseWithSubject(new Id { ID = 1 });
-                Console.WriteLine(course);
-                course = client.GetCourseWithSubject(new Id { ID = 100000 });
-                Console.WriteLine(course);
+                while (await call.ResponseStream.MoveNext())
+                {
+                    CourseSubjectDTO c = call.ResponseStream.Current;
+                    Console.WriteLine(c.ToString());
+                }
             }
-            catch (Exception ex)
+
+            Console.WriteLine("\nGetCourseWithSubject---------------------------------------");
+
+            CourseSubjectDTO courseSubjects = await courseClient.GetCourseWithSubjectAsync(new ID { Value = 1 });
+            Console.WriteLine(courseSubjects);
+
+            Console.WriteLine("\nAddCourse---------------------------------------");
+
+            CourseDTO addedCourse = await courseClient.AddCourseAsync(new CourseDTO { Name = "Test", Type = "Test" });
+            Console.WriteLine("Added " + addedCourse.ToString());
+
+            Console.WriteLine("\nModifyCourse---------------------------------------");
+
+            CourseDTO modifiedCourse = addedCourse;
+            modifiedCourse.Name = "Test2";
+            modifiedCourse = await courseClient.ModifyCourseAsync(new ChangeCourseDTO
             {
-                Console.WriteLine(ex.Message);
-            }
+                CourseId = addedCourse.CourseId,
+                Course = modifiedCourse
+            });
+            Console.WriteLine("Modified " + modifiedCourse.ToString());
 
-            Console.WriteLine("---------------------------------------");
+            Console.WriteLine("\nDeleteCourse---------------------------------------");
 
-            using (var call = client.GetSubjects(new EmptyMessage()))
+            CourseDTO deletedCourse = await courseClient.DeleteCourseAsync(new ID { Value = addedCourse.CourseId });
+            Console.WriteLine("Deleted " + deletedCourse);
+
+            Console.WriteLine("\nGetSubjects---------------------------------------");
+
+            using (var call = subjectClient.GetSubjects(new QueryParams { PageSize = 5, OrderBy = "name desc" }))
             {
                 while (await call.ResponseStream.MoveNext())
                 {
@@ -96,20 +138,77 @@ namespace GrpcClient
                     Console.WriteLine(s.ToString());
                 }
             }
-            
-            Console.WriteLine("---------------------------------------");
 
-            try
+            Console.WriteLine("\nGetSubject---------------------------------------");
+
+            SubjectDTO subject = await subjectClient.GetSubjectAsync(new ID { Value = 1 });
+            Console.WriteLine(subject);
+
+            Console.WriteLine("\nAddSubject---------------------------------------");
+
+            SubjectDTO addedSubject = await subjectClient.AddSubjectAsync(new SubjectDTO { Name = "Test" });
+            Console.WriteLine("Added " + addedSubject.ToString());
+
+            Console.WriteLine("\nModifySubject---------------------------------------");
+
+            SubjectDTO modifiedSubect = addedSubject;
+            modifiedSubect.Name = "Test2";
+            modifiedSubect = await subjectClient.ModifySubjectAsync(new ChangeSubjectDTO
             {
-                SubjectDTO subject = client.GetSubject(new Id { ID = 1 });
-                Console.WriteLine(subject);
-                subject = client.GetSubject(new Id { ID = 100000 });
-                Console.WriteLine(subject);
-            }
-            catch (Exception ex)
+                SubjectId = addedSubject.SubjectId,
+                Subject = modifiedSubect
+            });
+            Console.WriteLine("Modified " + modifiedSubect.ToString());
+
+            Console.WriteLine("\nDeleteSubject---------------------------------------");
+
+            SubjectDTO deletedSubject = await subjectClient.DeleteSubjectAsync(new ID { Value = addedSubject.SubjectId });
+            Console.WriteLine("Deleted " + deletedSubject);
+
+            Console.WriteLine("\nGetAttendances---------------------------------------");
+
+            using (var call = attendanceClient.GetAttendances(new QueryParams { PageSize = 5, OrderBy = "CheckInTime desc" }))
             {
-                Console.WriteLine(ex.Message);
+                try
+                {
+                    while (await call.ResponseStream.MoveNext())
+                    {
+                        AttendanceDTO a = call.ResponseStream.Current;
+                        Console.WriteLine(a.ToString());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    throw;
+                }
             }
+
+            Console.WriteLine("\nGetAttendance---------------------------------------");
+
+            AttendanceDTO attendance = await attendanceClient.GetAttendanceAsync(new ID { Value = 1 });
+            Console.WriteLine(attendance);
+
+            Console.WriteLine("\nAddAttendance---------------------------------------");
+
+            AttendanceDTO addedAttendance = await attendanceClient.AddAttendanceAsync(new AttendanceDTO { CheckInTime = "Test" });
+            Console.WriteLine("Added " + addedAttendance.ToString());
+
+            Console.WriteLine("\nModifyAttendance---------------------------------------");
+
+            AttendanceDTO modifiedAttendance = addedAttendance;
+            modifiedAttendance.CheckInTime = "Test2";
+            modifiedAttendance = await attendanceClient.ModifyAttendanceAsync(new ChangeAttendanceDTO
+            {
+                AttendanceId = addedAttendance.AttendanceId,
+                Attendance = modifiedAttendance
+            });
+            Console.WriteLine("Modified " + modifiedAttendance.ToString());
+
+            Console.WriteLine("\nDeleteAttendance---------------------------------------");
+
+            AttendanceDTO deletedAttendance = await attendanceClient.DeleteAttendanceAsync(new ID { Value = addedAttendance.AttendanceId });
+            Console.WriteLine("Deleted " + deletedAttendance);
         }
     }
 }
