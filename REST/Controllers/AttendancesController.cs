@@ -28,13 +28,21 @@ namespace REST.Controllers
         // GET: api/Attendances
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AttendanceDTO>>> GetAttendances(
-            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string orderBy = null)
+            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string orderBy = null, [FromQuery] string filterBy = null)
         {
             if (orderBy == null) orderBy = "attendanceId";
-            var attendances = _context.Attendances
-                .Include(a => a.Course)
-                .Include(a => a.Student)
-                .OrderBy(orderBy);
+            IOrderedQueryable<Attendance> attendances;
+            if (string.IsNullOrEmpty(filterBy))
+                attendances = _context.Attendances
+                    .Include(a => a.Course)
+                    .Include(a => a.Student)
+                    .OrderBy(orderBy);
+            else
+                attendances = _context.Attendances
+                    .Include(a => a.Course)
+                    .Include(a => a.Student)
+                    .Where(filterBy)
+                    .OrderBy(orderBy);
             return _mapper.Map<List<AttendanceDTO>>(await PaginatedList<Attendance>.CreateAsync(attendances, pageNumber ?? 1, pageSize));
         }
 

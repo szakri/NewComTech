@@ -29,20 +29,24 @@ namespace REST.Controllers
         // GET: api/Courses
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CourseDTO>>> GetCourses(
-            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string orderBy = null)
+            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string orderBy = null, [FromQuery] string filterBy = null)
         {
-            if (orderBy == null) orderBy = "courseId";
-            var courses = _context.Courses.OrderBy(orderBy);
+            if (string.IsNullOrEmpty(orderBy )) orderBy = "courseId";
+            IOrderedQueryable<Course> courses;
+            if (string.IsNullOrEmpty(filterBy)) courses = _context.Courses.OrderBy(orderBy);
+            else courses = _context.Courses.Where(filterBy).OrderBy(orderBy);
             return _mapper.Map<List<CourseDTO>>(await PaginatedList<Course>.CreateAsync(courses, pageNumber ?? 1, pageSize));
         }
 
         // GET: api/Courses/withSubject
         [HttpGet("withSubject")]
         public async Task<ActionResult<IEnumerable<CourseSubjectDTO>>> GetCoursesWithSubject(
-            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string orderBy = null)
+            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string orderBy = null, [FromQuery] string filterBy = null)
         {
-            if (orderBy == null) orderBy = "courseId";
-            var courses = _context.Courses.Include(c => c.Subject).OrderBy(orderBy);
+            if (string.IsNullOrEmpty(orderBy )) orderBy = "courseId";
+            IOrderedQueryable<Course> courses;
+            if (string.IsNullOrEmpty(filterBy)) courses = _context.Courses.Include(c => c.Subject).OrderBy(orderBy);
+            else courses = _context.Courses.Include(c => c.Subject).Where(filterBy).OrderBy(orderBy);
             return _mapper.Map<List<CourseSubjectDTO>>(await PaginatedList<Course>.CreateAsync(courses, pageNumber ?? 1, pageSize));
         }
 

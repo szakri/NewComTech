@@ -28,10 +28,12 @@ namespace REST.Controllers
         // GET: api/Subjects
         [HttpGet]
         public async Task<ActionResult<IEnumerable<SubjectDTO>>> GetSubjects(
-            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string orderBy = null)
+            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string orderBy = null, [FromQuery] string filterBy = null)
         {
-            if (orderBy == null) orderBy = "subjectId";
-            var subjects = _context.Subjects.OrderBy(orderBy);
+            if (string.IsNullOrEmpty(orderBy)) orderBy = "subjectId";
+            IOrderedQueryable<Subject> subjects;
+            if (string.IsNullOrEmpty(filterBy)) subjects = _context.Subjects.OrderBy(orderBy);
+            else subjects = _context.Subjects.Where(filterBy).OrderBy(orderBy);
             return _mapper.Map<List<SubjectDTO>>(await PaginatedList<Subject>.CreateAsync(subjects, pageNumber ?? 1, pageSize));
         }
 

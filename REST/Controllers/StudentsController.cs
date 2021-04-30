@@ -28,20 +28,24 @@ namespace REST.Controllers
         // GET: api/Students
         [HttpGet]
         public async Task<ActionResult<IEnumerable<StudentDTO>>> GetStudents(
-            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string orderBy = null)
+            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string orderBy = null, [FromQuery] string filterBy = null)
         {
-            if (orderBy == null) orderBy = "studentId";
-            var students = _context.Students.OrderBy(orderBy);
+            if (string.IsNullOrEmpty(orderBy)) orderBy = "studentId";
+            IOrderedQueryable<Student> students;
+            if (string.IsNullOrEmpty(filterBy)) students = _context.Students.OrderBy(orderBy);
+            else students = _context.Students.Where(filterBy).OrderBy(orderBy);
             return _mapper.Map<List<StudentDTO>>(await PaginatedList<Student>.CreateAsync(students, pageNumber ?? 1, pageSize));
         }
 
         // GET: api/Students/withCourses
         [HttpGet("withCourses")]
         public async Task<ActionResult<IEnumerable<StudentCoursesDTO>>> GetStudentsWithCourses(
-            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string orderBy = null)
+            [FromQuery] int? pageNumber, [FromQuery] int pageSize = 10, [FromQuery] string orderBy = null, [FromQuery] string filterBy = null)
         {
-            if (orderBy == null) orderBy = "studentId";
-            var students = _context.Students.Include(s => s.Courses).OrderBy(orderBy);
+            if (string.IsNullOrEmpty(orderBy)) orderBy = "studentId";
+            IOrderedQueryable<Student> students;
+            if (string.IsNullOrEmpty(filterBy)) students = _context.Students.Include(s => s.Courses).OrderBy(orderBy);
+            else students = _context.Students.Include(s => s.Courses).Where(filterBy).OrderBy(orderBy);
             return _mapper.Map<List<StudentCoursesDTO>>(await PaginatedList<Student>.CreateAsync(students, pageNumber ?? 1, pageSize));
         }
 
