@@ -66,6 +66,7 @@ namespace OData
             var courses = odataBuilder.EntitySet<Course>("Courses").EntityType;
             courses.Ignore(c => c.SubjectId);
             odataBuilder.EntitySet<Subject>("Subjects");
+            odataBuilder.EntitySet<Attendance>("Attendances");
 
             return odataBuilder.GetEdmModel();
         }
