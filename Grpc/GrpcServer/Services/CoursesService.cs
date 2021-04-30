@@ -25,10 +25,12 @@ namespace GrpcServer.Services
 
         public override async Task GetCourses(QueryParams request, IServerStreamWriter<CourseDTO> responseStream, ServerCallContext context)
         {
-            if (request.OrderBy == "") request.OrderBy = "courseId";
+            if (string.IsNullOrEmpty(request.OrderBy)) request.OrderBy = "courseId";
             if (request.PageNumber == 0) request.PageNumber = 1;
             if (request.PageSize == 0) request.PageSize = 10;
-            var courses = _context.Courses.OrderBy(request.OrderBy);
+            IOrderedQueryable<Course> courses;
+            if (string.IsNullOrEmpty(request.FilterBy)) courses = _context.Courses.OrderBy(request.OrderBy);
+            else courses = _context.Courses.Where(request.FilterBy).OrderBy(request.OrderBy);
             List<Course> responses = await PaginatedList<Course>.CreateAsync(courses, request.PageNumber, request.PageSize);
             foreach (var response in responses)
             {
@@ -48,10 +50,12 @@ namespace GrpcServer.Services
 
         public override async Task GetCoursesWithSubject(QueryParams request, IServerStreamWriter<CourseSubjectDTO> responseStream, ServerCallContext context)
         {
-            if (request.OrderBy == "") request.OrderBy = "courseId";
+            if (string.IsNullOrEmpty(request.OrderBy)) request.OrderBy = "courseId";
             if (request.PageNumber == 0) request.PageNumber = 1;
             if (request.PageSize == 0) request.PageSize = 10;
-            var courses = _context.Courses.Include(c => c.Subject).OrderBy(request.OrderBy);
+            IOrderedQueryable<Course> courses;
+            if (string.IsNullOrEmpty(request.FilterBy)) courses = _context.Courses.Include(c => c.Subject).OrderBy(request.OrderBy);
+            else courses = _context.Courses.Include(c => c.Subject).Where(request.FilterBy).OrderBy(request.OrderBy);
             List<Course> responses = await PaginatedList<Course>.CreateAsync(courses, request.PageNumber, request.PageSize);
             foreach (var response in responses)
             {

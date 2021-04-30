@@ -25,10 +25,12 @@ namespace GrpcServer.Services
 
         public override async Task GetSubjects(QueryParams request, IServerStreamWriter<SubjectDTO> responseStream, ServerCallContext context)
         {
-            if (request.OrderBy == "") request.OrderBy = "subjectId";
+            if (string.IsNullOrEmpty(request.OrderBy)) request.OrderBy = "subjectId";
             if (request.PageNumber == 0) request.PageNumber = 1;
             if (request.PageSize == 0) request.PageSize = 10;
-            var subjects = _context.Subjects.OrderBy(request.OrderBy);
+            IOrderedQueryable<Subject> subjects;
+            if (string.IsNullOrEmpty(request.FilterBy)) subjects = _context.Subjects.OrderBy(request.OrderBy);
+            else subjects = _context.Subjects.Where(request.FilterBy).OrderBy(request.OrderBy);
             List<Subject> responses = await PaginatedList<Subject>.CreateAsync(subjects, request.PageNumber, request.PageSize);
             foreach (var response in responses)
             {

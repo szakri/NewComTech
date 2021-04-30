@@ -14,6 +14,7 @@ message QueryParams
 	int32 PageNumber = 1;
 	int32 PageSize = 2;
 	string OrderBy = 3;
+	string FilterBy = 4;
 }
 
 message StudentDTO

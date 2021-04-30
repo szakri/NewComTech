@@ -25,13 +25,21 @@ namespace GrpcServer.Services
 
         public override async Task GetAttendances(QueryParams request, IServerStreamWriter<AttendanceDTO> responseStream, ServerCallContext context)
         {
-            if (request.OrderBy == "") request.OrderBy = "attendanceId";
+            if (string.IsNullOrEmpty(request.OrderBy)) request.OrderBy = "attendanceId";
             if (request.PageNumber == 0) request.PageNumber = 1;
             if (request.PageSize == 0) request.PageSize = 10;
-            var attendances = _context.Attendances
-                .Include(a => a.Course)
-                .Include(a => a.Student)
-                .OrderBy(request.OrderBy);
+            IOrderedQueryable<Attendance> attendances;
+            if (string.IsNullOrEmpty(request.FilterBy))
+                attendances = _context.Attendances
+                    .Include(a => a.Course)
+                    .Include(a => a.Student)
+                    .OrderBy(request.OrderBy);
+            else
+                attendances = _context.Attendances
+                    .Include(a => a.Course)
+                    .Include(a => a.Student)
+                    .Where(request.FilterBy)
+                    .OrderBy(request.OrderBy);
             List<Attendance> responses = await PaginatedList<Attendance>.CreateAsync(attendances, request.PageNumber, request.PageSize);
             foreach (var response in responses)
             {

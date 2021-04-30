@@ -26,10 +26,12 @@ namespace GrpcServer.Services
 
         public override async Task GetStudents(QueryParams request, IServerStreamWriter<StudentDTO> responseStream, ServerCallContext context)
         {
-            if (request.OrderBy == "") request.OrderBy = "studentId";
+            if (string.IsNullOrEmpty(request.OrderBy)) request.OrderBy = "studentId";
             if (request.PageNumber == 0) request.PageNumber = 1;
             if (request.PageSize == 0) request.PageSize = 10;
-            var students = _context.Students.OrderBy(request.OrderBy);
+            IOrderedQueryable<Student> students;
+            if (string.IsNullOrEmpty(request.FilterBy)) students = _context.Students.OrderBy(request.OrderBy);
+            else students = _context.Students.Where(request.FilterBy).OrderBy(request.OrderBy);
             List<Student> responses = await PaginatedList<Student>.CreateAsync(students, request.PageNumber, request.PageSize);
             foreach (var response in responses)
             {
@@ -49,10 +51,12 @@ namespace GrpcServer.Services
 
         public override async Task GetStudentsWithCourses(QueryParams request, IServerStreamWriter<StudentCoursesDTO> responseStream, ServerCallContext context)
         {
-            if (request.OrderBy == "") request.OrderBy = "studentId";
+            if (string.IsNullOrEmpty(request.OrderBy)) request.OrderBy = "studentId";
             if (request.PageNumber == 0) request.PageNumber = 1;
             if (request.PageSize == 0) request.PageSize = 10;
-            var students = _context.Students.Include(s => s.Courses).OrderBy(request.OrderBy);
+            IOrderedQueryable<Student> students;
+            if (string.IsNullOrEmpty(request.FilterBy)) students = _context.Students.Include(s => s.Courses).OrderBy(request.OrderBy);
+            else students = _context.Students.Include(s => s.Courses).Where(request.FilterBy).OrderBy(request.OrderBy);
             List<Student> responses = await PaginatedList<Student>.CreateAsync(students, request.PageNumber, request.PageSize);
             foreach (var response in responses)
             {
