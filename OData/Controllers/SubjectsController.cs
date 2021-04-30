@@ -8,10 +8,95 @@ using Microsoft.EntityFrameworkCore;
 using Common.Data;
 using Common.Models;
 using Microsoft.AspNet.OData;
+using Microsoft.AspNet.OData.Routing;
+using Microsoft.AspNet.OData.Results;
 
 namespace OData.Controllers
 {
-    [Route("api/[controller]")]
+    public class SubjectsController : ODataController
+    {
+        private readonly SchoolContext _context;
+
+        public SubjectsController(SchoolContext context)
+        {
+            _context = context;
+        }
+
+        [HttpGet]
+        [EnableQuery(PageSize = 10)]
+        public async Task<ActionResult<IEnumerable<Subject>>> GetSubjects()
+        {
+            return await _context.Subjects.ToListAsync();
+        }
+
+        [HttpGet]
+        [ODataRoute("subjects({id})")]
+        public async Task<ActionResult<Subject>> GetSubject([FromODataUri] int id)
+        {
+            var subject = await _context.Subjects.FindAsync(id);
+
+            if (subject == null)
+            {
+                return NotFound();
+            }
+
+            return subject;
+        }
+
+        [HttpPost]
+        public async Task<CreatedODataResult<Subject>> PostSubject([FromBody] Subject subject)
+        {
+            _context.Subjects.Add(subject);
+            await _context.SaveChangesAsync();
+
+            return Created(subject);
+        }
+
+        [HttpPut]
+        [ODataRoute("subjects({id})")]
+        public async Task<IActionResult> PutSubject([FromODataUri] int id, [FromBody] Subject subject)
+        {
+            if (id != subject.SubjectId)
+            {
+                return BadRequest();
+            }
+            _context.Entry(subject).State = EntityState.Modified;
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!_context.Subjects.Any(e => e.SubjectId == id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return Updated(subject);
+        }
+
+        [HttpDelete]
+        [ODataRoute("subjects({id})")]
+        public async Task<ActionResult<Subject>> DeleteSubject([FromODataUri] int id)
+        {
+            var subject = await _context.Subjects.FindAsync(id);
+            if (subject == null)
+            {
+                return NotFound();
+            }
+
+            _context.Subjects.Remove(subject);
+            await _context.SaveChangesAsync();
+
+            return subject;
+        }
+    }
+
+    /*[Route("api/[controller]")]
     [ApiController]
     public class SubjectsController : ControllerBase
     {
@@ -24,7 +109,7 @@ namespace OData.Controllers
 
         // GET: api/Subjects
         [HttpGet]
-        [EnableQuery()]
+        [EnableQuery(PageSize = 10)]
         public async Task<ActionResult<IEnumerable<Subject>>> GetSubjects()
         {
             return await _context.Subjects.ToListAsync();
@@ -50,7 +135,7 @@ namespace OData.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSubject(int id, Subject subject)
         {
-            if (id != subject.SubjectID)
+            if (id != subject.SubjectId)
             {
                 return BadRequest();
             }
@@ -85,7 +170,7 @@ namespace OData.Controllers
             _context.Subjects.Add(subject);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetSubject", new { id = subject.SubjectID }, subject);
+            return CreatedAtAction("GetSubject", new { id = subject.SubjectId }, subject);
         }
 
         // DELETE: api/Subjects/5
@@ -106,7 +191,7 @@ namespace OData.Controllers
 
         private bool SubjectExists(int id)
         {
-            return _context.Subjects.Any(e => e.SubjectID == id);
+            return _context.Subjects.Any(e => e.SubjectId == id);
         }
-    }
+    }*/
 }

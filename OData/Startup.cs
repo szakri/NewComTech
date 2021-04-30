@@ -33,7 +33,6 @@ namespace OData
         {
             services.AddDbContext<SchoolContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddAutoMapper(typeof(Startup));
             services.AddControllers(mvcOptions =>
                 mvcOptions.EnableEndpointRouting = false);
             services.AddOData();
@@ -53,25 +52,19 @@ namespace OData
 
             app.UseAuthorization();
 
-            var odataBuilder = new ODataConventionModelBuilder();
             app.UseMvc(routeBuilder =>
             {
-                routeBuilder.Select().Filter();
+                routeBuilder.Select().Filter().OrderBy().SkipToken().MaxTop(100);
                 routeBuilder.MapODataServiceRoute("odata", "odata", GetEdmModel());
             });
-
-            /*app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });*/
         }
 
         IEdmModel GetEdmModel()
         {
             var odataBuilder = new ODataConventionModelBuilder();
-            //odataBuilder.EntitySet<StudentDTO>("Students");
             odataBuilder.EntitySet<Student>("Students");
-            odataBuilder.EntitySet<Course>("Courses");
+            var courses = odataBuilder.EntitySet<Course>("Courses").EntityType;
+            courses.Ignore(c => c.SubjectId);
             odataBuilder.EntitySet<Subject>("Subjects");
 
             return odataBuilder.GetEdmModel();

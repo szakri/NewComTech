@@ -8,44 +8,32 @@ using Microsoft.EntityFrameworkCore;
 using Common.Data;
 using Common.Models;
 using Microsoft.AspNet.OData;
-using AutoMapper;
+using Microsoft.AspNet.OData.Routing;
+using Microsoft.AspNet.OData.Results;
 
 namespace OData.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class StudentsController : ControllerBase
+    public class StudentsController : ODataController
     {
         private readonly SchoolContext _context;
-        private readonly IMapper _mapper;
 
-        public StudentsController(SchoolContext context, IMapper mapper)
+        public StudentsController(SchoolContext context)
         {
             _context = context;
-            _mapper = mapper;
         }
 
-        // GET: api/Students
         [HttpGet]
-        [EnableQuery()]
+        [EnableQuery(PageSize = 10)]
         public async Task<ActionResult<IEnumerable<Student>>> GetStudents()
         {
-            return await _context.Students.ToListAsync();
+            return await _context.Students.Include(s => s.Courses).ToListAsync();
         }
 
-        /*[HttpGet]
-        [EnableQuery()]
-        public async Task<ActionResult<IEnumerable<StudentDTO>>> GetStudents()
+        [HttpGet]
+        [ODataRoute("students({id})")]
+        public async Task<ActionResult<Student>> GetStudent([FromODataUri] int id)
         {
-            var students = await _context.Students.ToListAsync();
-            return _mapper.Map<List<StudentDTO>>(students);
-        }*/
-
-        // GET: api/Students/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Student>> GetStudent(int id)
-        {
-            var student = await _context.Students.FindAsync(id);
+            var student = await _context.Students.Include(s => s.Courses).FirstOrDefaultAsync(s => s.StudentId == id);
 
             if (student == null)
             {
@@ -55,26 +43,31 @@ namespace OData.Controllers
             return student;
         }
 
-        // PUT: api/Students/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutStudent(int id, Student student)
+        [HttpPost]
+        public async Task<CreatedODataResult<Student>> PostStudent([FromBody] Student student)
         {
-            if (id != student.StudentID)
+            _context.Students.Add(student);
+            await _context.SaveChangesAsync();
+
+            return Created(student);
+        }
+
+        [HttpPut]
+        [ODataRoute("students({id})")]
+        public async Task<IActionResult> PutStudent([FromODataUri] int id, [FromBody] Student student)
+        {
+            if (id != student.StudentId)
             {
                 return BadRequest();
             }
-
             _context.Entry(student).State = EntityState.Modified;
-
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!StudentExists(id))
+                if (_context.Students.Any(e => e.StudentId == id))
                 {
                     return NotFound();
                 }
@@ -83,25 +76,12 @@ namespace OData.Controllers
                     throw;
                 }
             }
-
-            return NoContent();
+            return Updated(student);
         }
 
-        // POST: api/Students
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPost]
-        public async Task<ActionResult<Student>> PostStudent(Student student)
-        {
-            _context.Students.Add(student);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetStudent", new { id = student.StudentID }, student);
-        }
-
-        // DELETE: api/Students/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Student>> DeleteStudent(int id)
+        [HttpDelete]
+        [ODataRoute("students({id})")]
+        public async Task<ActionResult<Student>> DeleteStudent([FromODataUri] int id)
         {
             var student = await _context.Students.FindAsync(id);
             if (student == null)
@@ -113,11 +93,6 @@ namespace OData.Controllers
             await _context.SaveChangesAsync();
 
             return student;
-        }
-
-        private bool StudentExists(int id)
-        {
-            return _context.Students.Any(e => e.StudentID == id);
         }
     }
 }
