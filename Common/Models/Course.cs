@@ -17,7 +17,7 @@ namespace Common.Models
         [Required, MaxLength(10)]
         public string Type { get; set; }
 
-        public DayOfWeek? Day { get; set; }
+        public int? Day { get; set; }
 
         public string? From { get; set; }
 

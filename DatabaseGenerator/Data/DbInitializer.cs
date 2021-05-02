@@ -178,9 +178,9 @@ namespace DatabaseGenerator.Data
             return DateTime.Parse(from + ":15:00");
         }
 
-        private static DayOfWeek GetDayOfWeek()
+        private static int GetDayOfWeek()
         {
-            return (DayOfWeek)(r.Next(7) + 1);
+            return r.Next(7) + 1;
         }
 
         private static string GetCourseType()

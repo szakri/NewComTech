@@ -6,11 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="..\..\..\Documents\GitHub\BME\Önlabor\NewComTech\Common\Data\SchoolContext.cs" Link="Data\SchoolContext.cs" />
-    <Compile Include="..\..\..\Documents\GitHub\BME\Önlabor\NewComTech\Common\Models\Attendance.cs" Link="Models\Attendance.cs" />
-    <Compile Include="..\..\..\Documents\GitHub\BME\Önlabor\NewComTech\Common\Models\Course.cs" Link="Models\Course.cs" />
-    <Compile Include="..\..\..\Documents\GitHub\BME\Önlabor\NewComTech\Common\Models\Student.cs" Link="Models\Student.cs" />
-    <Compile Include="..\..\..\Documents\GitHub\BME\Önlabor\NewComTech\Common\Models\Subject.cs" Link="Models\Subject.cs" />
+    <Compile Include="..\Common\Data\SchoolContext.cs" Link="Data\SchoolContext.cs" />
+    <Compile Include="..\Common\Models\Attendance.cs" Link="Models\Attendance.cs" />
+    <Compile Include="..\Common\Models\Course.cs" Link="Models\Course.cs" />
+    <Compile Include="..\Common\Models\Student.cs" Link="Models\Student.cs" />
+    <Compile Include="..\Common\Models\Subject.cs" Link="Models\Subject.cs" />
   </ItemGroup>
 
   <ItemGroup>
