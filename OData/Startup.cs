@@ -54,7 +54,8 @@ namespace OData
 
             app.UseMvc(routeBuilder =>
             {
-                routeBuilder.Select().Filter().OrderBy().SkipToken().MaxTop(100);
+                routeBuilder.EnableDependencyInjection();
+                routeBuilder.Select().Filter().OrderBy().Expand().SkipToken().MaxTop(100);
                 routeBuilder.MapODataServiceRoute("odata", "odata", GetEdmModel());
             });
         }
@@ -62,7 +63,18 @@ namespace OData
         IEdmModel GetEdmModel()
         {
             var odataBuilder = new ODataConventionModelBuilder();
-            odataBuilder.EntitySet<Student>("Students");
+            var students = odataBuilder.EntitySet<Student>("Students").EntityType;
+            students.Ignore(s => s.QRCode);
+            var getQRfunc = odataBuilder.EntityType<Student>().Collection.Function("GetQRCode").Returns<FileContentResult>();
+            getQRfunc.Parameter<int>("studentId");
+                
+                /*.Parameter<int>("id")*/
+            /*ActionConfiguration rateProduct = odataBuilder.EntityType<Student>().Action("GetStudentQRCode");
+            rateProduct.Parameter<int>("id");
+            rateProduct.Returns<FileContentResult>();*/
+            /*var function = odataBuilder.Function("QR({id})");
+            function.Parameter<int>("id");
+            function.Returns<FileContentResult>();*/
             var courses = odataBuilder.EntitySet<Course>("Courses").EntityType;
             courses.Ignore(c => c.SubjectId);
             odataBuilder.EntitySet<Subject>("Subjects");

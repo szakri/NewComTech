@@ -43,6 +43,19 @@ namespace OData.Controllers
             return student;
         }
 
+        [HttpGet]
+        public async Task<FileContentResult> GetQRCode(int studentId)
+        {
+            var student = await _context.Students.FindAsync(studentId);
+
+            if (student == null)
+            {
+                return null;
+            }
+
+            return File(student.QRCode, "application/png");
+        }
+
         [HttpPost]
         public async Task<CreatedODataResult<Student>> PostStudent([FromBody] Student student)
         {

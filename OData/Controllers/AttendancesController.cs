@@ -26,14 +26,17 @@ namespace OData.Controllers
         [EnableQuery(PageSize = 10)]
         public async Task<ActionResult<IEnumerable<Attendance>>> GetAttendances()
         {
-            return await _context.Attendances.ToListAsync();
+            return await _context.Attendances.Include(a => a.Course).Include(a => a.Student).ToListAsync();
         }
 
         [HttpGet]
         [ODataRoute("attendances({id})")]
         public async Task<ActionResult<Attendance>> GetAttendance([FromODataUri] int id)
         {
-            var attendance = await _context.Attendances.FindAsync(id);
+            var attendance = await _context.Attendances
+                .Include(a => a.Course)
+                .Include(a => a.Student)
+                .FirstOrDefaultAsync(a => a.AttendanceId == id);
 
             if (attendance == null)
             {
