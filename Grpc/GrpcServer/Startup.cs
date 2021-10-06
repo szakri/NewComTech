@@ -45,7 +45,6 @@ namespace GrpcServer
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcService<SchoolService>();
                 endpoints.MapGrpcService<StudentsService>();
                 endpoints.MapGrpcService<CoursesService>();
                 endpoints.MapGrpcService<SubjectsService>();
