@@ -67,14 +67,7 @@ namespace OData
             students.Ignore(s => s.QRCode);
             var getQRfunc = odataBuilder.EntityType<Student>().Collection.Function("GetQRCode").Returns<FileContentResult>();
             getQRfunc.Parameter<int>("studentId");
-                
-                /*.Parameter<int>("id")*/
-            /*ActionConfiguration rateProduct = odataBuilder.EntityType<Student>().Action("GetStudentQRCode");
-            rateProduct.Parameter<int>("id");
-            rateProduct.Returns<FileContentResult>();*/
-            /*var function = odataBuilder.Function("QR({id})");
-            function.Parameter<int>("id");
-            function.Returns<FileContentResult>();*/
+
             var courses = odataBuilder.EntitySet<Course>("Courses").EntityType;
             courses.Ignore(c => c.SubjectId);
             odataBuilder.EntitySet<Subject>("Subjects");
