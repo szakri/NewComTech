@@ -33,11 +33,11 @@ namespace GraphQL
                     .AddFiltering()
                     .AddSorting()
                     .SetPagingOptions(new HotChocolate.Types.Pagination.PagingOptions
-                        {
-                            DefaultPageSize = 10,
-                            MaxPageSize = 100,
-                            IncludeTotalCount = true
-                        })
+                    {
+                        DefaultPageSize = 10,
+                        MaxPageSize = 100,
+                        IncludeTotalCount = true
+                    })
                     .AddMaxExecutionDepthRule(5);
 
             services.AddAutoMapper(typeof(Startup));
