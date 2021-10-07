@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System;
-using Common.Models;
 
 namespace Common.Data
 {
@@ -10,6 +9,16 @@ namespace Common.Data
         public string Neptun { get; set; }
         public string Name { get; set; }
         public string DayOfBirth { get; set; }
-        public IEnumerable<CourseDTO> Courses { get; set; }
+        public List<CourseDTO> Courses { get; set; }
+
+        public override string ToString()
+        {
+            string str = $"StudentId: {StudentId}, Neptun: {Neptun}, Name: {Name}, DayOfBirth: {DayOfBirth}";
+            foreach (var c in Courses)
+            {
+                str += "\n\t" + c.ToString();
+            }
+            return str;
+        }
     }
 }

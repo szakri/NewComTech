@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Common.Data
+﻿namespace Common.Data
 {
     public class StudentDTO
     {
@@ -8,5 +6,10 @@ namespace Common.Data
         public string Neptun { get; set; }
         public string Name { get; set; }
         public string DayOfBirth { get; set; }
+
+        public override string ToString()
+        {
+            return $"StudentId: {StudentId}, Neptun: {Neptun}, Name: {Name}, DayOfBirth: {DayOfBirth}";
+        }
     }
 }
