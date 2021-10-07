@@ -43,6 +43,7 @@ namespace REST.Controllers
                     .Include(a => a.Student)
                     .Where(filterBy)
                     .OrderBy(orderBy);
+            if (pageSize > 100) pageSize = 100;
             return _mapper.Map<List<AttendanceDTO>>(await PaginatedList<Attendance>.CreateAsync(attendances, pageNumber ?? 1, pageSize));
         }
 
@@ -109,7 +110,7 @@ namespace REST.Controllers
 
         // DELETE: api/Attendances/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAttendance(int id)
+        public async Task<ActionResult<AttendanceDTO>> DeleteAttendance(int id)
         {
             var attendance = await _context.Attendances.FindAsync(id);
             if (attendance == null)
@@ -120,7 +121,7 @@ namespace REST.Controllers
             _context.Attendances.Remove(attendance);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return _mapper.Map<AttendanceDTO>(attendance);
         }
 
         private bool AttendanceExists(int id)

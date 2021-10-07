@@ -9,6 +9,7 @@ using Common.Models;
 using Common.Data;
 using AutoMapper;
 using System.Linq.Dynamic.Core;
+using Microsoft.AspNetCore.StaticFiles;
 
 namespace REST.Controllers
 {
@@ -34,6 +35,7 @@ namespace REST.Controllers
             IOrderedQueryable<Student> students;
             if (string.IsNullOrEmpty(filterBy)) students = _context.Students.OrderBy(orderBy);
             else students = _context.Students.Where(filterBy).OrderBy(orderBy);
+            if (pageSize > 100) pageSize = 100;
             return _mapper.Map<List<StudentDTO>>(await PaginatedList<Student>.CreateAsync(students, pageNumber ?? 1, pageSize));
         }
 
@@ -46,6 +48,7 @@ namespace REST.Controllers
             IOrderedQueryable<Student> students;
             if (string.IsNullOrEmpty(filterBy)) students = _context.Students.Include(s => s.Courses).OrderBy(orderBy);
             else students = _context.Students.Include(s => s.Courses).Where(filterBy).OrderBy(orderBy);
+            if (pageSize > 100) pageSize = 100;
             return _mapper.Map<List<StudentCoursesDTO>>(await PaginatedList<Student>.CreateAsync(students, pageNumber ?? 1, pageSize));
         }
 
@@ -79,16 +82,16 @@ namespace REST.Controllers
 
         // GET: api/Students/5/QR
         [HttpGet("{id}/QR")]
-        public async Task<ActionResult<StudentQRCodeDTO>> GetStudentQRCode(int id)
+        public async Task<FileContentResult> GetStudentQRCode(int id)
         {
             var student = await _context.Students.FindAsync(id);
 
             if (student == null)
             {
-                return NotFound();
+                return null;
             }
 
-            return _mapper.Map<StudentQRCodeDTO>(student);
+            return File(student.QRCode, "application/png");
         }
 
         // PUT: api/Students/5

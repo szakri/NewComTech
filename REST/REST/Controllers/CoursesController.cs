@@ -35,6 +35,7 @@ namespace REST.Controllers
             IOrderedQueryable<Course> courses;
             if (string.IsNullOrEmpty(filterBy)) courses = _context.Courses.OrderBy(orderBy);
             else courses = _context.Courses.Where(filterBy).OrderBy(orderBy);
+            if (pageSize > 100) pageSize = 100;
             return _mapper.Map<List<CourseDTO>>(await PaginatedList<Course>.CreateAsync(courses, pageNumber ?? 1, pageSize));
         }
 
@@ -47,6 +48,7 @@ namespace REST.Controllers
             IOrderedQueryable<Course> courses;
             if (string.IsNullOrEmpty(filterBy)) courses = _context.Courses.Include(c => c.Subject).OrderBy(orderBy);
             else courses = _context.Courses.Include(c => c.Subject).Where(filterBy).OrderBy(orderBy);
+            if (pageSize > 100) pageSize = 100;
             return _mapper.Map<List<CourseSubjectDTO>>(await PaginatedList<Course>.CreateAsync(courses, pageNumber ?? 1, pageSize));
         }
 

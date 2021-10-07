@@ -34,6 +34,7 @@ namespace REST.Controllers
             IOrderedQueryable<Subject> subjects;
             if (string.IsNullOrEmpty(filterBy)) subjects = _context.Subjects.OrderBy(orderBy);
             else subjects = _context.Subjects.Where(filterBy).OrderBy(orderBy);
+            if (pageSize > 100) pageSize = 100;
             return _mapper.Map<List<SubjectDTO>>(await PaginatedList<Subject>.CreateAsync(subjects, pageNumber ?? 1, pageSize));
         }
 
