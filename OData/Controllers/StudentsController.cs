@@ -57,8 +57,11 @@ namespace OData.Controllers
         }
 
         [HttpPost]
-        public async Task<CreatedODataResult<Student>> PostStudent([FromBody] Student student)
+        public async Task<IActionResult> PostStudent([FromBody] Student student)
         {
+            if (_context.Students.Any(s => s.StudentId == student.StudentId))
+                return BadRequest($"A student already exists with this id: {student.StudentId}!");
+
             _context.Students.Add(student);
             await _context.SaveChangesAsync();
 
