@@ -28,6 +28,7 @@ namespace GrpcServer.Services
             if (string.IsNullOrEmpty(request.OrderBy)) request.OrderBy = "courseId";
             if (request.PageNumber == 0) request.PageNumber = 1;
             if (request.PageSize == 0) request.PageSize = 10;
+            if (request.PageSize > 100) request.PageSize = 100;
             IOrderedQueryable<Course> courses;
             if (string.IsNullOrEmpty(request.FilterBy)) courses = _context.Courses.OrderBy(request.OrderBy);
             else courses = _context.Courses.Where(request.FilterBy).OrderBy(request.OrderBy);

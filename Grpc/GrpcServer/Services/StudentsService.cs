@@ -29,6 +29,7 @@ namespace GrpcServer.Services
             if (string.IsNullOrEmpty(request.OrderBy)) request.OrderBy = "studentId";
             if (request.PageNumber == 0) request.PageNumber = 1;
             if (request.PageSize == 0) request.PageSize = 10;
+            if (request.PageSize > 100) request.PageSize = 100;
             IOrderedQueryable<Student> students;
             if (string.IsNullOrEmpty(request.FilterBy)) students = _context.Students.OrderBy(request.OrderBy);
             else students = _context.Students.Where(request.FilterBy).OrderBy(request.OrderBy);
@@ -54,6 +55,7 @@ namespace GrpcServer.Services
             if (string.IsNullOrEmpty(request.OrderBy)) request.OrderBy = "studentId";
             if (request.PageNumber == 0) request.PageNumber = 1;
             if (request.PageSize == 0) request.PageSize = 10;
+            if (request.PageSize > 100) request.PageSize = 100;
             IOrderedQueryable<Student> students;
             if (string.IsNullOrEmpty(request.FilterBy)) students = _context.Students.Include(s => s.Courses).OrderBy(request.OrderBy);
             else students = _context.Students.Include(s => s.Courses).Where(request.FilterBy).OrderBy(request.OrderBy);

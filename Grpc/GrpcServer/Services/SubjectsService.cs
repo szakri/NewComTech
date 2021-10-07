@@ -28,6 +28,7 @@ namespace GrpcServer.Services
             if (string.IsNullOrEmpty(request.OrderBy)) request.OrderBy = "subjectId";
             if (request.PageNumber == 0) request.PageNumber = 1;
             if (request.PageSize == 0) request.PageSize = 10;
+            if (request.PageSize > 100) request.PageSize = 100;
             IOrderedQueryable<Subject> subjects;
             if (string.IsNullOrEmpty(request.FilterBy)) subjects = _context.Subjects.OrderBy(request.OrderBy);
             else subjects = _context.Subjects.Where(request.FilterBy).OrderBy(request.OrderBy);

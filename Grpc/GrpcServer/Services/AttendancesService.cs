@@ -28,6 +28,7 @@ namespace GrpcServer.Services
             if (string.IsNullOrEmpty(request.OrderBy)) request.OrderBy = "attendanceId";
             if (request.PageNumber == 0) request.PageNumber = 1;
             if (request.PageSize == 0) request.PageSize = 10;
+            if (request.PageSize > 100) request.PageSize = 100;
             IOrderedQueryable<Attendance> attendances;
             if (string.IsNullOrEmpty(request.FilterBy))
                 attendances = _context.Attendances
