@@ -44,73 +44,59 @@ namespace Measurements
 
     class Program
     {
-        private const string REST_URL = "https://localhost:44337/api/";
-        private const string ODATA_URL = "https://localhost:44349/odata/";
-        private const string GRAPHQL_URL = "https://localhost:44378/graphql/";
-        private static HttpClient client;
+        private const string REST_BASE_URL = "https://localhost:44337/api/";
+        private const string ODATA_BASE_URL = "https://localhost:44349/odata/";
+        private const string GRAPHQL_BASE_URL = "https://localhost:44378/graphql/";
 
         static async Task Main(string[] args)
         {
-            client = new HttpClient();
-            client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
-
-            List<double> restTimes = new List<double>();
-            List<double> odataTimes = new List<double>();
-            List<double> graphqlTimes = new List<double>();
-            string cursor = "";
-            int pageSize = 10;
-            for (int i = 0; i < 2; i++)
+            string[] restURLs = new string[]
             {
-                Stopwatch stopWatch = new Stopwatch();
-                string responseAsString;
+                "students/1/QR",
+                "students/withCourses?pageSize=50&orderBy=name desc&filterBy=name.Contains(\"á\") or name.Contains(\"é\")"
+            };
+            string[] odataURLs = new string[]
+            {
+                "students/GetQRCode(studentId=1)",
+                "students?$top=50&$orderby=name desc&$select=name&$filter=contains( name,'á') or contains( name,'é')&$expand=Courses($select=name)"
+            };
+            string[] graphQLQueries = new string[]
+            {
+                @"query{
+	                student(id: 1){
+		                qRCode
+	                }
+                }",
+                @"query{
+                    students(order: { name: DESC},
+                        where: {
+                            or: [
+                                { name: { contains: ""é"" } },
+                                { name: { contains: ""á"" } }
+                            ]
+                        },
+                        first: 50
+                        ){
+                    nodes{
+                        name,
+                        courses{
+                        name
+                        }
+                    }
+                  }
+                }"
+            };
 
-                stopWatch.Restart();
-                responseAsString = await client.GetAsync($"{REST_URL}students/withCourses?pageNumber={i + 1}").Result.Content.ReadAsStringAsync();
-                stopWatch.Stop();
-                restTimes.Add(stopWatch.Elapsed.TotalMilliseconds);
-                /*Console.WriteLine("REST:");
-                Console.WriteLine($"\t Response time: {stopWatch.Elapsed}");
-                Console.WriteLine($"\t Size: {Encoding.Unicode.GetByteCount(responseAsString)}");*/
+            /*long time = await measureHTTPGet(REST_BASE_URL + restURLs[0]);
+            Console.WriteLine(time);*/
 
-                stopWatch.Restart();
-                responseAsString = await client
-                    .GetAsync($"{ODATA_URL}students?$select=StudentId,%20name&$expand=Courses($select=name)&$skip={i * pageSize}")
-                    .Result.Content.ReadAsStringAsync();
-                stopWatch.Stop();
-                odataTimes.Add(stopWatch.Elapsed.TotalMilliseconds);
-                /*Console.WriteLine("ODATA:");
-                Console.WriteLine($"\t Response time: {stopWatch.Elapsed}");
-                Console.WriteLine($"\t Size: {Encoding.Unicode.GetByteCount(responseAsString)}");*/
+            long time = await measureHTTPGet(ODATA_BASE_URL + odataURLs[0]);
+            Console.WriteLine(time);
 
-                string GraphQLQuery;
-                if (cursor == "")
-                {
-                    GraphQLQuery = "query{ students{ nodes{ studentId, name, courses{ name } }, pageInfo { endCursor } } }";
-                }
-                else
-                {
-                    GraphQLQuery = "query{ students(after: \\\"" + cursor + "\\\"){ nodes{ studentId, name, courses{ name } }, pageInfo { endCursor } } }";
-                }
-                string query = "{ \"query\" : \"" + GraphQLQuery + "\" }";
-                stopWatch.Restart();
-                HttpResponseMessage response = await client.PostAsync(GRAPHQL_URL, new StringContent(
-                    query, Encoding.UTF8, "application/json"));
-                responseAsString = await response.Content.ReadAsStringAsync();
-                stopWatch.Stop();
-                graphqlTimes.Add(stopWatch.Elapsed.TotalMilliseconds);
-                /*Console.WriteLine("GRAPHQL:");
-                Console.WriteLine($"\t Response time: {stopWatch.Elapsed}");
-                Console.WriteLine($"\t Size: Sent: {Encoding.Unicode.GetByteCount(query)} " +
-                    $"Received: {Encoding.Unicode.GetByteCount(responseAsString)}");*/
+            /*time = await measureHTTPPost(GRAPHQL_BASE_URL, graphQLQueryToJSON(graphQLQueries[0]));
+            Console.WriteLine(time);*/
 
-                var parsed = JsonConvert.DeserializeObject<Root>(responseAsString);
-                cursor = parsed.data.students.pageInfo.endCursor;
-            }
-
-            client.Dispose();
-
-            Console.WriteLine("REST");
+            /*Console.WriteLine("REST");
             foreach (var item in restTimes)
             {
                 Console.WriteLine($"Response time: {item}");
@@ -127,8 +113,8 @@ namespace Measurements
             {
                 Console.WriteLine($"Response time: {item}");
             }
-            average = restTimes.Average();
-            sum = restTimes.Sum(d => Math.Pow(d - average, 2));
+            average = odataTimes.Average();
+            sum = odataTimes.Sum(d => Math.Pow(d - average, 2));
             stdDev = Math.Sqrt((sum) / (odataTimes.Count() - 1));
             Console.WriteLine($"Avg: {average}");
             Console.WriteLine($"Standard deviation: {stdDev}");
@@ -139,11 +125,50 @@ namespace Measurements
             {
                 Console.WriteLine($"Response time: {item}");
             }
-            average = restTimes.Average();
-            sum = restTimes.Sum(d => Math.Pow(d - average, 2));
+            average = graphqlTimes.Average();
+            sum = graphqlTimes.Sum(d => Math.Pow(d - average, 2));
             stdDev = Math.Sqrt((sum) / (graphqlTimes.Count() - 1));
             Console.WriteLine($"Avg: {average}");
-            Console.WriteLine($"Standard deviation: {stdDev}");
+            Console.WriteLine($"Standard deviation: {stdDev}");*/
+        }
+
+        static string graphQLQueryToJSON(string query)
+        {
+            return "{ \"query\" : \"" + query + "\" }";
+        }
+
+        static async Task<long> measureHTTPGet(string url)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+            Stopwatch stopWatch = new Stopwatch();
+            string responseAsString;
+
+            stopWatch.Restart();
+            responseAsString = await client.GetAsync(url).Result.Content.ReadAsStringAsync();
+            stopWatch.Stop();
+
+            client.Dispose();
+            return stopWatch.ElapsedMilliseconds;
+        }
+
+        static async Task<long> measureHTTPPost(string url, string body)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+            Stopwatch stopWatch = new Stopwatch();
+            string responseAsString;
+
+            stopWatch.Restart();
+            HttpResponseMessage response = await client.PostAsync(url, new StringContent(
+                body, Encoding.UTF8, "application/json"));
+            responseAsString = await response.Content.ReadAsStringAsync();
+            stopWatch.Stop();
+
+            client.Dispose();
+            return stopWatch.ElapsedMilliseconds;
         }
     }
 }
