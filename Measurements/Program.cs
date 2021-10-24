@@ -6,135 +6,178 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Measurements
 {
-    public class Root
+    class Measurement
     {
-        public Data data { get; set; }
-    }
+        public string URL { get; set; }
+        public int IterationNumber { get; set; }
+        public int? IterationFrom { get; set; }
+        public bool IsPOST { get; set; }
+        public string Body { get; set; }
 
-    public class Data
-    {
-        public Students students { get; set; }
-    }
-
-    public class Students
-    {
-        public List<object> nodes { get; set; }
-        public PageInfo pageInfo { get; set; }
-    }
-
-    public class PageInfo
-    {
-        public string endCursor { get; set; }
-    }
-
-    /*public class Measurement
-    {
-        public double responseTime;
-        public int size;
-
-        public override string ToString()
+        public Measurement(string URL, int iterationNumber = 1, int? iterationFrom = null)
         {
-            return $"Response time: {responseTime}, Size: {size}";
+            this.URL = URL;
+            this.IterationNumber = iterationNumber;
+            this.IterationFrom = iterationFrom;
+            this.IsPOST = false;
         }
-    }*/
+
+        public Measurement(string URL, string body, int iterationNumber = 1, int? iterationFrom = null)
+        {
+            this.URL = URL;
+            this.IterationNumber = iterationNumber;
+            this.IterationFrom = iterationFrom;
+            this.IsPOST = true;
+            this.Body = body;
+        }
+    }
 
     class Program
     {
         private const string REST_BASE_URL = "https://localhost:44337/api/";
         private const string ODATA_BASE_URL = "https://localhost:44349/odata/";
         private const string GRAPHQL_BASE_URL = "https://localhost:44378/graphql/";
+        static List<long> restTimes = new List<long>();
+        static List<long> odataTimes = new List<long>();
+        static List<long> graphQLTimes = new List<long>();
 
         static async Task Main(string[] args)
         {
-            string[] restURLs = new string[]
-            {
-                "students/1/QR",
-                "students/withCourses?pageSize=50&orderBy=name desc&filterBy=name.Contains(\"á\") or name.Contains(\"é\")"
+            Measurement[] rest = new Measurement[] {
+                new Measurement(REST_BASE_URL + "students/1/QR"),
+                new Measurement(REST_BASE_URL + "students/withCourses?pageSize=50&orderBy=name desc&filterBy=name.Contains(\"á\") or name.Contains(\"é\")"),
+                new Measurement(REST_BASE_URL + "courses/withSubject?pageSize=5&pageNumber=#", 5, 1)
             };
-            string[] odataURLs = new string[]
-            {
-                "students/GetQRCode(studentId=1)",
-                "students?$top=50&$orderby=name desc&$select=name&$filter=contains( name,'á') or contains( name,'é')&$expand=Courses($select=name)"
+            Measurement[] odata = new Measurement[] {
+                new Measurement(ODATA_BASE_URL + "students/GetQRCode(studentId=1)"),
+                new Measurement(ODATA_BASE_URL + "students?$top=50&$orderby=name desc&$select=name&$filter=contains( name,'á') or contains( name,'é')&$expand=Courses($select=name)"),
+                //new Measurement(ODATA_BASE_URL + "students?$top=50&$orderby=name desc&$select=name&$filter=contains( name,'á') or contains( name,'é')&$expand=Courses($select=name;$expand=Subject($select=name))"),
+                new Measurement(ODATA_BASE_URL + "courses?top=5&$select=name&$expand=Subject($select=name)&$skip=#", 5, 0)
             };
-            string[] graphQLQueries = new string[]
+            Measurement[] graphql = new Measurement[]
             {
-                @"query{
-	                student(id: 1){
-		                qRCode
-	                }
-                }",
-                @"query{
-                    students(order: { name: DESC},
-                        where: {
-                            or: [
-                                { name: { contains: ""é"" } },
-                                { name: { contains: ""á"" } }
-                            ]
-                        },
-                        first: 50
+                new Measurement(GRAPHQL_BASE_URL,
+                    @"query{
+	                    student(id: 1){
+		                    qRCode
+	                    }
+                    }"),
+                new Measurement(GRAPHQL_BASE_URL,
+                    @"query{
+                        students(order: { name: DESC},
+                            where: {
+                                or: [
+                                    { name: { contains: ""é"" } },
+                                    { name: { contains: ""á"" } }
+                                ]
+                            },
+                            first: 50
                         ){
-                    nodes{
-                        name,
-                        courses{
-                        name
+                            nodes{
+                                name,
+                                courses{
+                                    name
+                                }
+                            }
                         }
-                    }
-                  }
-                }"
+                    }"),
+                /*new Measurement(GRAPHQL_BASE_URL,
+                    @"query{
+                        students(order: { name: DESC},
+                            where: {
+                                or: [
+                                    { name: { contains: ""é"" } },
+                                    { name: { contains: ""á"" } }
+                                ]
+                            },
+                            first: 50
+                        ){
+                            nodes{
+                                name,
+                                courses{
+                                    name,
+                                    subject{
+                                      name
+                                    }
+                                }
+                            }
+                        }
+                    }"),*/
+                new Measurement(GRAPHQL_BASE_URL,
+                    @"query{
+	                    courses(first: 5, offset:#){
+			                name
+			                subject{
+				                name
+			                }
+	                    }
+                    }", 5, 0)
             };
-
-            /*long time = await measureHTTPGet(REST_BASE_URL + restURLs[0]);
-            Console.WriteLine(time);*/
-
-            long time = await measureHTTPGet(ODATA_BASE_URL + odataURLs[0]);
-            Console.WriteLine(time);
-
-            /*time = await measureHTTPPost(GRAPHQL_BASE_URL, graphQLQueryToJSON(graphQLQueries[0]));
-            Console.WriteLine(time);*/
-
-            /*Console.WriteLine("REST");
-            foreach (var item in restTimes)
+            foreach (var item in rest)
             {
-                Console.WriteLine($"Response time: {item}");
+                for (int i = 0; i < item.IterationNumber; i++)
+                {
+                    long time;
+                    if (item.IterationFrom != null)
+                    {
+                        time = await measureHTTPGet(item.URL.Replace("#", (item.IterationFrom + i).ToString()));
+                    }
+                    else
+                    {
+                        time = await measureHTTPGet(item.URL);
+                    }
+                    restTimes.Add(time);
+                    Console.WriteLine(time);
+                }
             }
-            double average = restTimes.Average();
-            double sum = restTimes.Sum(d => Math.Pow(d - average, 2));
-            double stdDev = Math.Sqrt((sum) / (restTimes.Count() - 1));
-            Console.WriteLine($"Avg: {average}");
-            Console.WriteLine($"Standard deviation: {stdDev}");
-            Console.WriteLine();
-
-            Console.WriteLine("OData");
-            foreach (var item in odataTimes)
+            foreach (var item in odata)
             {
-                Console.WriteLine($"Response time: {item}");
+                for (int i = 0; i < item.IterationNumber; i++)
+                {
+                    long time;
+                    if (item.IterationFrom != null)
+                    {
+                        time = await measureHTTPGet(item.URL.Replace("#", (item.IterationFrom + i).ToString()));
+                    }
+                    else
+                    {
+                        time = await measureHTTPGet(item.URL);
+                    }
+                    odataTimes.Add(time);
+                    Console.WriteLine(time);
+                }
             }
-            average = odataTimes.Average();
-            sum = odataTimes.Sum(d => Math.Pow(d - average, 2));
-            stdDev = Math.Sqrt((sum) / (odataTimes.Count() - 1));
-            Console.WriteLine($"Avg: {average}");
-            Console.WriteLine($"Standard deviation: {stdDev}");
-            Console.WriteLine();
-
-            Console.WriteLine("GraphQL");
-            foreach (var item in graphqlTimes)
+            foreach (var item in graphql)
             {
-                Console.WriteLine($"Response time: {item}");
+                for (int i = 0; i < item.IterationNumber; i++)
+                {
+                    long time;
+                    if (item.IterationFrom != null)
+                    {
+                        time = await measureHTTPPost(item.URL, graphQLQueryToJSON(item.Body.Replace("#", (item.IterationFrom + i).ToString())));
+                    }
+                    else
+                    {
+                        time = await measureHTTPPost(item.URL, graphQLQueryToJSON(item.Body));
+                    }
+                    graphQLTimes.Add(time);
+                    Console.WriteLine(time);
+                }
             }
-            average = graphqlTimes.Average();
-            sum = graphqlTimes.Sum(d => Math.Pow(d - average, 2));
-            stdDev = Math.Sqrt((sum) / (graphqlTimes.Count() - 1));
-            Console.WriteLine($"Avg: {average}");
-            Console.WriteLine($"Standard deviation: {stdDev}");*/
+
+            /*average = graphQLTimes.Average();
+            sum = graphQLTimes.Sum(d => Math.Pow(d - average, 2));
+            stdDev = Math.Sqrt((sum) / (graphQLTimes.Count() - 1));*/
         }
 
         static string graphQLQueryToJSON(string query)
         {
-            return "{ \"query\" : \"" + query + "\" }";
+            return Regex.Replace("{ \"query\" : \"" + query.Replace("\r", "").Replace("\n", "") + "\" }", @"\s+", " ");
         }
 
         static async Task<long> measureHTTPGet(string url)
