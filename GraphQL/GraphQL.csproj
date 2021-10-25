@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Compile Include="..\Common\Data\SchoolContext.cs" Link="Data\SchoolContext.cs" />
+    <Compile Include="..\Common\Logs\TimerLoggingMW.cs" Link="Logs\TimerLoggingMW.cs" />
     <Compile Include="..\Common\Models\Attendance.cs" Link="Models\Attendance.cs" />
     <Compile Include="..\Common\Models\Course.cs" Link="Models\Course.cs" />
     <Compile Include="..\Common\Models\Student.cs" Link="Models\Student.cs" />
@@ -23,6 +24,7 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Logs\" />
   </ItemGroup>
 
 

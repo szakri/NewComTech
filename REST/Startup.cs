@@ -1,4 +1,5 @@
 using Common.Data;
+using Common.Logs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -33,6 +34,8 @@ namespace REST
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseMiddleware<TimerLoggingMW>();
 
             app.UseHttpsRedirection();
 

@@ -1,4 +1,5 @@
 using Common.Data;
+using Common.Logs;
 using Common.Models;
 using Microsoft.AspNet.OData.Builder;
 using Microsoft.AspNet.OData.Extensions;
@@ -40,6 +41,8 @@ namespace OData
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseMiddleware<TimerLoggingMW>();
 
             app.UseHttpsRedirection();
 

@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using HotChocolate;
 using Microsoft.Extensions.Logging;
+using Common.Logs;
 
 namespace GraphQL
 {
@@ -50,6 +51,8 @@ namespace GraphQL
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseMiddleware<TimerLoggingMW>();
 
             app.UseRouting();
 
