@@ -1,0 +1,102 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcClient.Protos";
+
+package school;
+
+message ID
+{
+	int32 Value = 1;
+}
+
+message QueryParams
+{
+	int32 PageNumber = 1;
+	int32 PageSize = 2;
+	string OrderBy = 3;
+	string FilterBy = 4;
+}
+
+message StudentDTO
+{
+	int32 StudentId = 1;
+	string Name = 2;
+	string Neptun = 3;
+	string DayOfBirth = 4;
+}
+
+message StudentCoursesDTO
+{
+	int32 StudentId = 1;
+	string Neptun = 2;
+	string Name = 3;
+	string DayOfBirth = 4;
+	repeated CourseDTO Courses = 5;
+}
+
+message StudentQRCodeDTO
+{
+    int32 StudentId = 1;
+    bytes QRCode = 2;
+}
+
+message ChangeStudentDTO
+{
+	int32 StudentId = 1;
+	StudentDTO Student = 2;
+}
+
+message CourseDTO
+{
+	int32 CourseId = 1;
+	string Name = 2;
+	string Type = 4;
+	int32 Day = 5;
+	string From = 6;
+	string To = 7;
+}
+
+message CourseSubjectDTO
+{
+	int32 CourseId = 1;
+	string Name = 2;
+	string Type = 3;
+	int32 Day = 4;
+	string From = 5;
+	string To = 6;
+	SubjectDTO Subject = 7;
+}
+
+message ChangeCourseDTO
+{
+	int32 CourseId = 1;
+	CourseDTO Course = 2;
+}
+
+message SubjectDTO
+{
+	int32 SubjectId = 1;
+	string Name = 2;
+}
+
+message ChangeSubjectDTO
+{
+	int32 SubjectId = 1;
+	SubjectDTO Subject = 2;
+}
+
+message AttendanceDTO
+{
+    int32 AttendanceId = 1;
+    CourseDTO Course = 2;
+    StudentDTO Student = 3;
+    string Date = 4;
+    string CheckInTime = 5;
+    string CheckOutTime = 6;
+}
+
+message ChangeAttendanceDTO
+{
+	int32 AttendanceId = 1;
+	AttendanceDTO Attendance = 2;
+}
