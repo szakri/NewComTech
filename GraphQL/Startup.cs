@@ -29,15 +29,15 @@ namespace GraphQL
                     .AddGraphQLServer()
                     .AddQueryType<Query>()
                     .AddMutationType<Mutation>()
-                    .AddProjections()
-                    .AddFiltering()
-                    .AddSorting()
                     .SetPagingOptions(new HotChocolate.Types.Pagination.PagingOptions
                     {
                         DefaultPageSize = 10,
                         MaxPageSize = 100,
                         IncludeTotalCount = true
                     })
+                    .AddProjections()
+                    .AddFiltering()
+                    .AddSorting()
                     .AddMaxExecutionDepthRule(5);
 
             services.AddAutoMapper(typeof(Startup));

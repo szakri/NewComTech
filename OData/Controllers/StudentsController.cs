@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Common.Data;
 using Common.Models;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNet.OData.Routing;
-using Microsoft.AspNet.OData.Results;
 
 namespace OData.Controllers
 {
@@ -26,7 +23,7 @@ namespace OData.Controllers
         [EnableQuery(PageSize = 10)]
         public async Task<ActionResult<IEnumerable<Student>>> GetStudents()
         {
-            return await _context.Students.Include(s => s.Courses).ToListAsync();
+            return await _context.Students.Include(s => s.Courses).ThenInclude(c => c.Subject).ToListAsync();
         }
 
         [HttpGet]

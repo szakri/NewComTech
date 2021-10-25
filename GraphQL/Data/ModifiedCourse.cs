@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace GraphQL.Data
 {
@@ -17,8 +14,8 @@ namespace GraphQL.Data
 
         public DayOfWeek? Day { get; set; }
 
-        public string? From { get; set; }
+        public string From { get; set; }
 
-        public string? To { get; set; }
+        public string To { get; set; }
     }
 }

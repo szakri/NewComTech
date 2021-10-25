@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Common.Models
 {
@@ -21,6 +18,6 @@ namespace Common.Models
 
         public byte[] QRCode { get; set; }
 
-        public List<Course>? Courses { get; set; }
+        public List<Course> Courses { get; set; }
     }
 }

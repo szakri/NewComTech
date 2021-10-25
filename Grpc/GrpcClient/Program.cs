@@ -1,12 +1,10 @@
-﻿using Google.Protobuf;
-using Grpc.Core;
+﻿using Grpc.Core;
 using Grpc.Net.Client;
 using GrpcClient.Protos;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 

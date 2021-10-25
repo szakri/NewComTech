@@ -1,12 +1,9 @@
 ﻿using Common.Data;
 using Common.Models;
 using Microsoft.AspNet.OData;
-using Microsoft.AspNet.OData.Results;
 using Microsoft.AspNet.OData.Routing;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -26,7 +23,11 @@ namespace OData.Controllers
         [EnableQuery(PageSize = 10)]
         public async Task<ActionResult<IEnumerable<Attendance>>> GetAttendances()
         {
-            return await _context.Attendances.Include(a => a.Course).Include(a => a.Student).ToListAsync();
+            return await _context.Attendances
+                .Include(a => a.Student)
+                .Include(a => a.Course)
+                .ThenInclude(c => c.Subject)
+                .ToListAsync();
         }
 
         [HttpGet]
@@ -34,8 +35,9 @@ namespace OData.Controllers
         public async Task<ActionResult<Attendance>> GetAttendance([FromODataUri] int id)
         {
             var attendance = await _context.Attendances
-                .Include(a => a.Course)
                 .Include(a => a.Student)
+                .Include(a => a.Course)
+                .ThenInclude(c => c.Subject)
                 .FirstOrDefaultAsync(a => a.AttendanceId == id);
 
             if (attendance == null)

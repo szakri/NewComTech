@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Common.Data
+﻿namespace Common.Data
 {
     public class AttendanceDTO
     {

@@ -1,8 +1,6 @@
-﻿using AutoMapper;
-using Common.Data;
+﻿using Common.Data;
 using HotChocolate.Types;
 using HotChocolate;
-using System.Linq;
 using System.Collections.Generic;
 using HotChocolate.Data;
 using Common.Models;
@@ -19,7 +17,7 @@ namespace GraphQL.Services
         [UseFiltering]
         [UseSorting]
         public async Task<IEnumerable<Student>> GetStudents([ScopedService] SchoolContext context) =>
-            await context.Students.Include(s => s.Courses).ToListAsync();
+            await context.Students.Include(s => s.Courses).ThenInclude(c => c.Subject).ToListAsync();
 
         [UseDbContext(typeof(SchoolContext))]
         public async Task<Student> GetStudent([ScopedService] SchoolContext context, int id) =>
@@ -55,10 +53,10 @@ namespace GraphQL.Services
         [UseFiltering]
         [UseSorting]
         public async Task<IEnumerable<Attendance>> GetAttendances([ScopedService] SchoolContext context) =>
-            await context.Attendances.Include(a => a.Course).Include(a => a.Student).ToListAsync();
+            await context.Attendances.Include(a => a.Student).Include(a => a.Course).ThenInclude(c => c.Subject).ToListAsync();
 
         [UseDbContext(typeof(SchoolContext))]
         public async Task<Attendance> GetAttendance([ScopedService] SchoolContext context, int id) =>
-            await context.Attendances.Include(a => a.Course).Include(a => a.Student).FirstOrDefaultAsync(a => a.AttendanceId == id);
+            await context.Attendances.Include(a => a.Student).Include(a => a.Course).ThenInclude(c => c.Subject).FirstOrDefaultAsync(a => a.AttendanceId == id);
     }
 }
