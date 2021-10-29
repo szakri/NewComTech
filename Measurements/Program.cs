@@ -138,35 +138,35 @@ namespace Measurements
             Response res2;
             string currentDirectory = Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).FullName).FullName).FullName;
             string file = currentDirectory + "\\Measurements.txt";
-            File.AppendAllText(file, DateTime.UtcNow.ToString() + "\n");
-
+            
+            #region REST
             // The first request is dropped because of 'warm up'
             await measureHTTPGet(REST_BASE_URL + "students/1");
             write("REST\n", file);
 
-            write($"\tQuery {queryNum++}: ", file);
-            Measurement m1 = new Measurement(REST_BASE_URL + "students?pageSize=100");
-            res = await measureHTTPGet(m1.URLs[0]);
+            write($"\tQuery {queryNum++} {DateTime.UtcNow}: ", file);
+            Measurement m = new Measurement(REST_BASE_URL + "students?pageSize=100");
+            res = await measureHTTPGet(m.URLs[0]);
             write($"({res.Time} ms, {res.GetSize()} B)\n", file);
 
-            write($"\tQuery {queryNum++}: ", file);
-            Measurement m2 = new Measurement(REST_BASE_URL + "students/1/QR");
-            res = await measureHTTPGet(m2.URLs[0]);
+            write($"\tQuery {queryNum++} {DateTime.UtcNow}: ", file);
+            m = new Measurement(REST_BASE_URL + "students/1/QR");
+            res = await measureHTTPGet(m.URLs[0]);
             write($"({res.Time} ms, {res.GetSize()} B)\n", file);
 
-            write($"\tQuery {queryNum++}: ", file);
-            Measurement m3 = new Measurement(REST_BASE_URL + "students/withCourses?pageSize=50&orderBy=name desc&filterBy=name.Contains(\"á\") or name.Contains(\"é\")");
-            res = await measureHTTPGet(m3.URLs[0]);
+            write($"\tQuery {queryNum++} {DateTime.UtcNow}: ", file);
+            m = new Measurement(REST_BASE_URL + "students/withCourses?pageSize=50&orderBy=name desc&filterBy=name.Contains(\"á\") or name.Contains(\"é\")");
+            res = await measureHTTPGet(m.URLs[0]);
             write($"({res.Time} ms, {res.GetSize()} B)\n", file);
 
-            write($"\tQuery {queryNum++}: ", file);
-            Measurement m4 = new Measurement(
+            write($"\tQuery {queryNum++} {DateTime.UtcNow}: ", file);
+            m = new Measurement(
                 new List<string> {
                     REST_BASE_URL + "students/withCourses?pageSize=50&orderBy=name desc&filterBy=name.Contains(\"á\") or name.Contains(\"é\")",
                     REST_BASE_URL + "courses?pageSize=100&filterBy="
                 }
             );
-            res = await measureHTTPGet(m4.URLs[0]);
+            res = await measureHTTPGet(m.URLs[0]);
             List<Student> students = JsonConvert.DeserializeObject<List<Student>>(res.Body);
             // The query string would be too long, so we have to split the query into multiple
             foreach (var student in students)
@@ -180,21 +180,21 @@ namespace Measurements
                         filter += " or ";
                     }
                 }
-                res2 = await measureHTTPGet(m4.URLs[1] + filter);
+                res2 = await measureHTTPGet(m.URLs[1] + filter);
                 res.Time += res2.Time;
                 res.Body += res2.Body;
             }
             write($"({res.Time} ms, {res.GetSize()} B)\n", file);
 
-            write($"\tQuery {queryNum++}: ", file);
+            write($"\tQuery {queryNum++} {DateTime.UtcNow}: ", file);
             filter = "";
-            Measurement m5 = new Measurement(
+            m = new Measurement(
                     new List<string> {
                         REST_BASE_URL + "attendances?pageSize=100&filterBy=checkInTime>\"10:00:00\" and checkInTime<\"11:30:00\"",
                         REST_BASE_URL + "courses/withSubject?pageSize=100&filterBy="
                     }
                 );
-            res = await measureHTTPGet(m5.URLs[0]);
+            res = await measureHTTPGet(m.URLs[0]);
             List<Attendance> attendances = JsonConvert.DeserializeObject<List<Attendance>>(res.Body);
             for (int i = 0; i < attendances.Count; i++)
             {
@@ -204,21 +204,22 @@ namespace Measurements
                     filter += " or ";
                 }
             }
-            res2 = await measureHTTPGet(m5.URLs[1] + filter);
+            res2 = await measureHTTPGet(m.URLs[1] + filter);
             res.Time += res2.Time;
             res.Body += res2.Body;
             write($"({res.Time} ms, {res.GetSize()} B)\n", file);
 
-            write($"\tQuery {queryNum++}: ", file);
-            Measurement m6 = new Measurement(REST_BASE_URL + "courses/withSubject?pageSize=5&pageNumber=#", 5, 1);
-            for (int i = 0; i < m6.IterationNumber; i++)
+            write($"\tQuery {queryNum++} {DateTime.UtcNow}: ", file);
+            m = new Measurement(REST_BASE_URL + "courses/withSubject?pageSize=5&pageNumber=#", 5, 1);
+            for (int i = 0; i < m.IterationNumber; i++)
             {
-                res = await measureHTTPGet(m3.URLs[0]);
+                res = await measureHTTPGet(m.URLs[0]);
                 write($"({res.Time} ms, {res.GetSize()} B) ", file);
             }
             write("\n", file);
-
-
+            #endregion
+            
+            #region OData
             Measurement[] odata = new Measurement[] {
                 new Measurement(ODATA_BASE_URL + "students?$top=100"),
                 new Measurement(ODATA_BASE_URL + "students/GetQRCode(studentId=1)"),
@@ -234,8 +235,7 @@ namespace Measurements
             queryNum = 1;
             foreach (var item in odata)
             {
-                write($"\tQuery {queryNum}: ", file);
-                queryNum++;
+                write($"\tQuery {queryNum++} {DateTime.UtcNow}: ", file);
                 for (int i = 0; i < item.IterationNumber; i++)
                 {
                     if (item.IterationFrom != null)
@@ -254,8 +254,9 @@ namespace Measurements
                 }
                 write("\n", file);
             }
-
-
+            #endregion
+            
+            #region GraphQL
             Measurement[] graphql = new Measurement[]
             {
                 new Measurement(GRAPHQL_BASE_URL,
@@ -331,15 +332,15 @@ namespace Measurements
                             }
                         }
                     }")
-                /*new Measurement(GRAPHQL_BASE_URL,
-                    @"query{
-                        courses(first: 5, offset:#){
-                            name
-                            subject{
-                                name
-                            }
-                        }
-                    }", 5, 0)*/
+                //new Measurement(GRAPHQL_BASE_URL,
+                    //@"query{
+                        //courses(first: 5, offset:#){
+                            //name
+                            //subject{
+                                //name
+                            //}
+                        //}
+                    //}", 5, 0)
             };
 
             // The first request is dropped because of 'warm up'
@@ -349,8 +350,7 @@ namespace Measurements
             queryNum = 1;
             foreach (var item in graphql)
             {
-                write($"\tQuery {queryNum}: ", file);
-                queryNum++;
+                write($"\tQuery {queryNum++} {DateTime.UtcNow}: ", file);
                 for (int i = 0; i < item.IterationNumber; i++)
                 {
                     if (item.IterationFrom != null)
@@ -369,8 +369,9 @@ namespace Measurements
                 }
                 write("\n", file);
             }
+            #endregion
 
-
+            #region gRPC
             GrpcChannel channel = GrpcChannel.ForAddress(GRPC_BASE_URL);
             var studentClient = new Students.StudentsClient(channel);
             var courseClient = new Courses.CoursesClient(channel);
@@ -383,13 +384,7 @@ namespace Measurements
             write("gRPC\n", file);
             queryNum = 1;
 
-            write($"\tQuery {queryNum++}: ", file);
-            stopWatch.Restart();
-            var studentQR = await studentClient.GetStudentQRCodeAsync(new ID { Value = 1 });
-            stopWatch.Stop();
-            write($"({res.Time} ms, {res.GetSize()} B)\n", file);
-
-            write($"\tQuery {queryNum++}: ", file);
+            write($"\tQuery {queryNum++} {DateTime.UtcNow}: ", file);
             stopWatch.Restart();
             using (var call = studentClient.GetStudents(new QueryParams { PageSize = 100 }))
             {
@@ -399,9 +394,15 @@ namespace Measurements
                 }
             }
             stopWatch.Stop();
-            write($"({res.Time} ms, {res.GetSize()} B)\n", file);
+            write($"({stopWatch.ElapsedMilliseconds} ms, ? B)\n", file);
 
-            write($"\tQuery {queryNum++}: ", file);
+            write($"\tQuery {queryNum++} {DateTime.UtcNow}: ", file);
+            stopWatch.Restart();
+            var studentQR = await studentClient.GetStudentQRCodeAsync(new ID { Value = 1 });
+            stopWatch.Stop();
+            write($"({stopWatch.ElapsedMilliseconds} ms, ? B)\n", file);
+
+            write($"\tQuery {queryNum++} {DateTime.UtcNow}: ", file);
             stopWatch.Restart();
             using (var call = studentClient.GetStudentsWithCourses(new QueryParams { PageSize = 5, OrderBy = "name desc", FilterBy = "name.Contains(\"á\") or name.Contains(\"é\")" }))
             {
@@ -411,9 +412,9 @@ namespace Measurements
                 }
             }
             stopWatch.Stop();
-            write($"({res.Time} ms, {res.GetSize()} B)\n", file);
+            write($"({stopWatch.ElapsedMilliseconds} ms, ? B)\n", file);
 
-            write($"\tQuery {queryNum++}: ", file);
+            write($"\tQuery {queryNum++} {DateTime.UtcNow}: ", file);
             List<int> ids = new List<int>();
             stopWatch.Restart();
             using (var call = studentClient.GetStudentsWithCourses(new QueryParams { PageSize = 5, OrderBy = "name desc", FilterBy = "name.Contains(\"á\") or name.Contains(\"é\")" }))
@@ -446,9 +447,9 @@ namespace Measurements
                 }
             }
             stopWatch.Stop();
-            write($"({res.Time} ms, {res.GetSize()} B)\n", file);
+            write($"({stopWatch.ElapsedMilliseconds} ms, ? B)\n", file);
 
-            write($"\tQuery {queryNum++}: ", file);
+            write($"\tQuery {queryNum++} {DateTime.UtcNow}: ", file);
             stopWatch.Restart();
             ids = new List<int>();
             using (var call = attendanceClient.GetAttendances(
@@ -481,9 +482,9 @@ namespace Measurements
                 }
             }
             stopWatch.Stop();
-            write($"({res.Time} ms, {res.GetSize()} B)\n", file);
+            write($"({stopWatch.ElapsedMilliseconds} ms, ? B)\n", file);
 
-            write($"\tQuery {queryNum++}: ", file);
+            write($"\tQuery {queryNum++} {DateTime.UtcNow}: ", file);
             for (int i = 0; i < 5; i++)
             {
                 stopWatch.Restart();
@@ -495,9 +496,11 @@ namespace Measurements
                     }   
                 }
                 stopWatch.Stop();
-                write($"({res.Time} ms, {res.GetSize()} B) ", file);
+                write($"({stopWatch.ElapsedMilliseconds} ms, ? B) ", file);
             }
             write("\n", file);
+            #endregion
+            
         }
 
         static void write(string text, string file)
