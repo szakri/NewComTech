@@ -38,8 +38,6 @@ namespace GrpcServer
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMiddleware<TimerLoggingMW>();
-
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
