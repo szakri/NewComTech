@@ -1,5 +1,4 @@
 ﻿using Common.Data;
-using Common.Logs;
 using GrpcServer.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
