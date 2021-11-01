@@ -12,14 +12,14 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api",
+      "launchUrl": "api/students",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "REST": {
       "commandName": "Project",
-      "launchUrl": "api",
+      "launchUrl": "ap/studentsi",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
