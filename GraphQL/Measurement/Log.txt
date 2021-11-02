@@ -1,0 +1,51 @@
+2021. 11. 01. 18:20:00 2195 ms,	51 B	/graphql/ body: { "query" : "query{ student(id: 1){ name } }" }
+2021. 11. 01. 18:20:00 334 ms,	9100 B	/graphql/ body: { "query" : " query{ students(first: 100){ nodes{ studentId, name, dayOfBirth, neptun } } }" }
+2021. 11. 01. 18:20:01 199 ms,	9100 B	/graphql/ body: { "query" : " query{ students(first: 100){ nodes{ studentId, name, dayOfBirth, neptun } } }" }
+2021. 11. 01. 18:20:01 178 ms,	9100 B	/graphql/ body: { "query" : " query{ students(first: 100){ nodes{ studentId, name, dayOfBirth, neptun } } }" }
+2021. 11. 01. 18:20:01 176 ms,	9100 B	/graphql/ body: { "query" : " query{ students(first: 100){ nodes{ studentId, name, dayOfBirth, neptun } } }" }
+2021. 11. 01. 18:20:01 189 ms,	9100 B	/graphql/ body: { "query" : " query{ students(first: 100){ nodes{ studentId, name, dayOfBirth, neptun } } }" }
+2021. 11. 01. 18:20:01 166 ms,	9100 B	/graphql/ body: { "query" : " query{ students(first: 100){ nodes{ studentId, name, dayOfBirth, neptun } } }" }
+2021. 11. 01. 18:20:01 144 ms,	9100 B	/graphql/ body: { "query" : " query{ students(first: 100){ nodes{ studentId, name, dayOfBirth, neptun } } }" }
+2021. 11. 01. 18:20:02 146 ms,	9100 B	/graphql/ body: { "query" : " query{ students(first: 100){ nodes{ studentId, name, dayOfBirth, neptun } } }" }
+2021. 11. 01. 18:20:02 146 ms,	9100 B	/graphql/ body: { "query" : " query{ students(first: 100){ nodes{ studentId, name, dayOfBirth, neptun } } }" }
+2021. 11. 01. 18:20:02 141 ms,	9100 B	/graphql/ body: { "query" : " query{ students(first: 100){ nodes{ studentId, name, dayOfBirth, neptun } } }" }
+2021. 11. 01. 18:20:02 16 ms,	23985 B	/graphql/ body: { "query" : " query{ student(id: 1){ qRCode } }" }
+2021. 11. 01. 18:20:02 10 ms,	23985 B	/graphql/ body: { "query" : " query{ student(id: 1){ qRCode } }" }
+2021. 11. 01. 18:20:02 10 ms,	23985 B	/graphql/ body: { "query" : " query{ student(id: 1){ qRCode } }" }
+2021. 11. 01. 18:20:02 11 ms,	23985 B	/graphql/ body: { "query" : " query{ student(id: 1){ qRCode } }" }
+2021. 11. 01. 18:20:02 10 ms,	23985 B	/graphql/ body: { "query" : " query{ student(id: 1){ qRCode } }" }
+2021. 11. 01. 18:20:02 12 ms,	23985 B	/graphql/ body: { "query" : " query{ student(id: 1){ qRCode } }" }
+2021. 11. 01. 18:20:02 14 ms,	23985 B	/graphql/ body: { "query" : " query{ student(id: 1){ qRCode } }" }
+2021. 11. 01. 18:20:02 10 ms,	23985 B	/graphql/ body: { "query" : " query{ student(id: 1){ qRCode } }" }
+2021. 11. 01. 18:20:02 10 ms,	23985 B	/graphql/ body: { "query" : " query{ student(id: 1){ qRCode } }" }
+2021. 11. 01. 18:20:02 10 ms,	23985 B	/graphql/ body: { "query" : " query{ student(id: 1){ qRCode } }" }
+2021. 11. 01. 18:20:02 214 ms,	7812 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name } } } }" }
+2021. 11. 01. 18:20:02 129 ms,	7812 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name } } } }" }
+2021. 11. 01. 18:20:03 129 ms,	7812 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name } } } }" }
+2021. 11. 01. 18:20:03 137 ms,	7812 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name } } } }" }
+2021. 11. 01. 18:20:03 143 ms,	7812 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name } } } }" }
+2021. 11. 01. 18:20:03 137 ms,	7812 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name } } } }" }
+2021. 11. 01. 18:20:03 134 ms,	7812 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name } } } }" }
+2021. 11. 01. 18:20:03 178 ms,	7812 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name } } } }" }
+2021. 11. 01. 18:20:04 144 ms,	7812 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name } } } }" }
+2021. 11. 01. 18:20:04 131 ms,	7812 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name } } } }" }
+2021. 11. 01. 18:20:04 135 ms,	31462 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name, subject{ name } } } } }" }
+2021. 11. 01. 18:20:04 134 ms,	31462 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name, subject{ name } } } } }" }
+2021. 11. 01. 18:20:04 135 ms,	31462 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name, subject{ name } } } } }" }
+2021. 11. 01. 18:20:04 145 ms,	31462 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name, subject{ name } } } } }" }
+2021. 11. 01. 18:20:04 175 ms,	31462 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name, subject{ name } } } } }" }
+2021. 11. 01. 18:20:05 136 ms,	31462 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name, subject{ name } } } } }" }
+2021. 11. 01. 18:20:05 141 ms,	31462 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name, subject{ name } } } } }" }
+2021. 11. 01. 18:20:05 134 ms,	31462 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name, subject{ name } } } } }" }
+2021. 11. 01. 18:20:05 137 ms,	31462 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name, subject{ name } } } } }" }
+2021. 11. 01. 18:20:05 133 ms,	31462 B	/graphql/ body: { "query" : " query{ students(order: { name: DESC}, where: { or: [ { name: { contains: \"é\" } }, { name: { contains: \"á\" } } ] }, first: 50 ){ nodes{ name, courses{ name, subject{ name } } } } }" }
+2021. 11. 01. 18:20:05 134 ms,	1161 B	/graphql/ body: { "query" : " query{ attendances{ nodes{ student{ name }, course{ subject{ name } } } } }" }
+2021. 11. 01. 18:20:05 100 ms,	1161 B	/graphql/ body: { "query" : " query{ attendances{ nodes{ student{ name }, course{ subject{ name } } } } }" }
+2021. 11. 01. 18:20:06 100 ms,	1161 B	/graphql/ body: { "query" : " query{ attendances{ nodes{ student{ name }, course{ subject{ name } } } } }" }
+2021. 11. 01. 18:20:06 92 ms,	1161 B	/graphql/ body: { "query" : " query{ attendances{ nodes{ student{ name }, course{ subject{ name } } } } }" }
+2021. 11. 01. 18:20:06 95 ms,	1161 B	/graphql/ body: { "query" : " query{ attendances{ nodes{ student{ name }, course{ subject{ name } } } } }" }
+2021. 11. 01. 18:20:06 92 ms,	1161 B	/graphql/ body: { "query" : " query{ attendances{ nodes{ student{ name }, course{ subject{ name } } } } }" }
+2021. 11. 01. 18:20:06 95 ms,	1161 B	/graphql/ body: { "query" : " query{ attendances{ nodes{ student{ name }, course{ subject{ name } } } } }" }
+2021. 11. 01. 18:20:06 93 ms,	1161 B	/graphql/ body: { "query" : " query{ attendances{ nodes{ student{ name }, course{ subject{ name } } } } }" }
+2021. 11. 01. 18:20:06 95 ms,	1161 B	/graphql/ body: { "query" : " query{ attendances{ nodes{ student{ name }, course{ subject{ name } } } } }" }
+2021. 11. 01. 18:20:06 91 ms,	1161 B	/graphql/ body: { "query" : " query{ attendances{ nodes{ student{ name }, course{ subject{ name } } } } }" }

@@ -1,0 +1,2816 @@
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Students/GetStudent application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 2 byte message to 'GrpcServer.Protos.ID'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Students/GetStudent application/grpc - - 200 - application/grpc 1976.8325ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Students/GetStudents application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 2 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 36 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 41 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 34 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 41 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 42 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 36 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 36 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 41 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 36 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 41 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 42 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 41 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 36 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 42 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 41 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 42 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 34 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 35 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 42 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 35 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 34 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 41 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 36 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 34 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 41 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 42 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 35 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 41 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 42 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 36 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Students/GetStudents application/grpc - - 200 - application/grpc 897.3240ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Students/GetStudentQRCode application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 2 byte message to 'GrpcServer.Protos.ID'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentQRCodeDTO' to 8954 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Students/GetStudentQRCode application/grpc - - 200 - application/grpc 31.8618ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Students/GetStudentsWithCourses application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 57 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 320 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 176 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 207 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 273 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 243 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Students/GetStudentsWithCourses application/grpc - - 200 - application/grpc 281.2902ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Students/GetStudentsWithCourses application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 57 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 320 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 176 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 207 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 273 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 243 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Students/GetStudentsWithCourses application/grpc - - 200 - application/grpc 50.2493ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 465 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 68 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 63 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 50 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 68 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 68 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 57 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 67 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 82 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 75 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 73 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 75 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 71 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 49 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 66 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 61 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 57 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 64 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 61 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 75 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 63 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 52 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 62 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 58 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 71 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 58 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 57 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 49 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 100 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc - - 200 - application/grpc 221.5823ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Attendances/GetAttendances application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 53 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 114 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 109 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 110 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 110 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 111 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 104 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 109 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 112 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 110 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 107 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 108 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 111 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 110 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 110 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 113 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 113 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 112 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 115 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 111 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 110 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 113 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 108 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 113 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 112 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 106 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 112 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 111 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 110 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 113 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 109 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Attendances/GetAttendances application/grpc - - 200 - application/grpc 240.8253ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 464 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 68 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 50 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 81 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 69 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 67 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 75 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 69 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 49 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 61 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 48 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 57 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 56 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 61 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 75 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 75 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 61 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 67 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 54 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc - - 200 - application/grpc 124.3758ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 4 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 56 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 74 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 78 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 76 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 76 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc - - 200 - application/grpc 44.7900ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 4 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 65 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 65 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 65 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 78 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 78 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc - - 200 - application/grpc 43.9498ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 4 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 80 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 57 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 59 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 57 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 70 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc - - 200 - application/grpc 41.1386ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 4 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 68 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 68 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 53 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 53 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 55 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc - - 200 - application/grpc 38.8228ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 4 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 76 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 69 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 74 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 67 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 63 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc - - 200 - application/grpc 36.3068ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Students/GetStudent application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 2 byte message to 'GrpcServer.Protos.ID'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Students/GetStudent application/grpc - - 200 - application/grpc 29.4097ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Students/GetStudents application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 2 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 36 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 41 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 34 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 41 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 42 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 36 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 36 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 41 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 36 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 41 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 42 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 41 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 36 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 42 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 41 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 42 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 34 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 35 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 42 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 35 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 34 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 41 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 36 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 34 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 41 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 42 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 35 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 37 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 41 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 40 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 39 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 42 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 38 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentDTO' to 36 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Students/GetStudents application/grpc - - 200 - application/grpc 597.4593ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Students/GetStudentQRCode application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 2 byte message to 'GrpcServer.Protos.ID'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentQRCodeDTO' to 8954 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Students/GetStudentQRCode application/grpc - - 200 - application/grpc 14.3766ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Students/GetStudentsWithCourses application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 57 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 320 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 176 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 207 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 273 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 243 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Students/GetStudentsWithCourses application/grpc - - 200 - application/grpc 48.3754ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Students/GetStudentsWithCourses application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 57 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 320 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 176 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 207 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 273 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.StudentCoursesDTO' to 243 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Students/GetStudentsWithCourses application/grpc - - 200 - application/grpc 46.4948ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 465 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 68 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 63 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 50 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 68 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 68 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 57 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 67 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 82 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 75 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 73 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 75 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 71 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 49 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 66 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 61 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 57 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 64 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 61 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 75 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 63 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 52 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 62 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 58 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 71 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 58 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 57 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 49 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 100 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc - - 200 - application/grpc 210.3717ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Attendances/GetAttendances application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 53 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 114 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 109 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 110 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 110 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 111 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 104 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 109 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 112 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 110 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 107 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 108 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 111 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 110 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 110 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 113 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 113 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 112 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 115 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 111 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 110 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 113 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 108 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 113 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 112 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 106 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 112 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 111 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 110 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 113 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.AttendanceDTO' to 109 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Attendances/GetAttendances application/grpc - - 200 - application/grpc 213.1054ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 464 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 68 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 50 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 81 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 69 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 67 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 75 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 69 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 49 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 61 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 48 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 57 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 56 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 61 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 75 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 75 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 61 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 67 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 54 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc - - 200 - application/grpc 145.1434ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 4 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 56 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 74 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 78 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 76 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 76 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc - - 200 - application/grpc 38.4296ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 4 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 65 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 65 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 65 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 78 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 78 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc - - 200 - application/grpc 34.6094ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 4 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 80 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 57 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 59 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 57 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 70 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc - - 200 - application/grpc 33.6923ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 4 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 68 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 68 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 53 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 53 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 55 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc - - 200 - application/grpc 35.0060ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc -
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[10]
+      Reading message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[12]
+      Deserializing 4 byte message to 'GrpcServer.Protos.QueryParams'.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[13]
+      Received message.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 76 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 69 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 74 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 67 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+dbug: Grpc.AspNetCore.Server.ServerCallHandler[15]
+      Sending message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[18]
+      Serialized 'GrpcServer.Protos.CourseSubjectDTO' to 63 byte message.
+trce: Grpc.AspNetCore.Server.ServerCallHandler[16]
+      Message sent.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:5001/school.Courses/GetCoursesWithSubject application/grpc - - 200 - application/grpc 36.1307ms
