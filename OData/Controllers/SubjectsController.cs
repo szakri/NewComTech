@@ -21,10 +21,7 @@ namespace OData.Controllers
 
         [HttpGet]
         [EnableQuery(PageSize = 10)]
-        public async Task<ActionResult<IEnumerable<Subject>>> GetSubjects()
-        {
-            return await _context.Subjects.ToListAsync();
-        }
+        public IQueryable<Subject> GetSubjects() => _context.Subjects;
 
         [HttpGet]
         [ODataRoute("subjects({id})")]

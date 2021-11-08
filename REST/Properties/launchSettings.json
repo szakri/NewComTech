@@ -19,7 +19,7 @@
     },
     "REST": {
       "commandName": "Project",
-      "launchUrl": "ap/studentsi",
+      "launchUrl": "ap/students",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

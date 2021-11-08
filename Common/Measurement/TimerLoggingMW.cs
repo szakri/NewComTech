@@ -14,7 +14,7 @@ namespace Common.Logs
         private readonly ILogger _logger;
         private Stopwatch stopWatch = new Stopwatch();
         private static string currentDirectory = Directory.GetCurrentDirectory();
-        private static string file = currentDirectory + "\\Logs\\Log.txt";
+        private static string file = currentDirectory + "\\Measurement\\Log.txt";
 
         public TimerLoggingMW(RequestDelegate next, ILoggerFactory loggerFactory)
         {
@@ -56,7 +56,7 @@ namespace Common.Logs
                 if (toBeLogged)
                 {
                     body = string.IsNullOrEmpty(body) ? "" : " body: " + body;
-                    string text = $"{DateTime.Now} {stopWatch.ElapsedMilliseconds} ms,\t{context.Response?.ContentLength ?? buffer.Length} B\t" +
+                    string text = $"{DateTime.Now}\t{stopWatch.ElapsedMilliseconds} ms\t{context.Response?.ContentLength ?? buffer.Length} B\t" +
                         $"{context.Request?.Path.Value}{context.Request?.QueryString}{body}";
                     _logger.LogInformation(text);
                     File.AppendAllText(file, text + "\n");

@@ -1,0 +1,89 @@
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:DataServices>
+    <Schema Namespace="Common.Models" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityType Name="Student">
+        <Key>
+          <PropertyRef Name="StudentId" />
+        </Key>
+        <Property Name="StudentId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" />
+        <Property Name="DayOfBirth" Type="Edm.String" Nullable="false" />
+        <Property Name="Neptun" Type="Edm.String" Nullable="false" MaxLength="6" />
+        <NavigationProperty Name="Courses" Type="Collection(Common.Models.Course)" />
+      </EntityType>
+      <EntityType Name="Course">
+        <Key>
+          <PropertyRef Name="CourseId" />
+        </Key>
+        <Property Name="CourseId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="100" />
+        <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="10" />
+        <Property Name="Day" Type="Edm.Int32" />
+        <Property Name="From" Type="Edm.String" />
+        <Property Name="To" Type="Edm.String" />
+        <NavigationProperty Name="Subject" Type="Common.Models.Subject" />
+        <NavigationProperty Name="Students" Type="Collection(Common.Models.Student)" />
+      </EntityType>
+      <EntityType Name="Subject">
+        <Key>
+          <PropertyRef Name="SubjectId" />
+        </Key>
+        <Property Name="SubjectId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="100" />
+        <NavigationProperty Name="Courses" Type="Collection(Common.Models.Course)" />
+      </EntityType>
+      <EntityType Name="Attendance">
+        <Key>
+          <PropertyRef Name="AttendanceId" />
+        </Key>
+        <Property Name="AttendanceId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CourseId" Type="Edm.Int32" />
+        <Property Name="StudentId" Type="Edm.Int32" />
+        <Property Name="Date" Type="Edm.String" />
+        <Property Name="CheckInTime" Type="Edm.String" />
+        <Property Name="CheckOutTime" Type="Edm.String" />
+        <NavigationProperty Name="Course" Type="Common.Models.Course">
+          <ReferentialConstraint Property="CourseId" ReferencedProperty="CourseId" />
+        </NavigationProperty>
+        <NavigationProperty Name="Student" Type="Common.Models.Student">
+          <ReferentialConstraint Property="StudentId" ReferencedProperty="StudentId" />
+        </NavigationProperty>
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Microsoft.AspNetCore.Mvc" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <ComplexType Name="FileContentResult">
+        <Property Name="FileContents" Type="Edm.Binary" />
+        <Property Name="FileDownloadName" Type="Edm.String" />
+        <Property Name="LastModified" Type="Edm.DateTimeOffset" />
+        <Property Name="EntityTag" Type="Microsoft.Net.Http.Headers.EntityTagHeaderValue" />
+        <Property Name="EnableRangeProcessing" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
+    </Schema>
+    <Schema Namespace="Microsoft.Net.Http.Headers" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <ComplexType Name="EntityTagHeaderValue" />
+    </Schema>
+    <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <Function Name="GetQRCode" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Collection(Common.Models.Student)" />
+        <Parameter Name="studentId" Type="Edm.Int32" Nullable="false" />
+        <ReturnType Type="Microsoft.AspNetCore.Mvc.FileContentResult" />
+      </Function>
+      <EntityContainer Name="Container">
+        <EntitySet Name="Students" EntityType="Common.Models.Student">
+          <NavigationPropertyBinding Path="Courses" Target="Courses" />
+        </EntitySet>
+        <EntitySet Name="Courses" EntityType="Common.Models.Course">
+          <NavigationPropertyBinding Path="Students" Target="Students" />
+          <NavigationPropertyBinding Path="Subject" Target="Subjects" />
+        </EntitySet>
+        <EntitySet Name="Subjects" EntityType="Common.Models.Subject">
+          <NavigationPropertyBinding Path="Courses" Target="Courses" />
+        </EntitySet>
+        <EntitySet Name="Attendances" EntityType="Common.Models.Attendance">
+          <NavigationPropertyBinding Path="Course" Target="Courses" />
+          <NavigationPropertyBinding Path="Student" Target="Students" />
+        </EntitySet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

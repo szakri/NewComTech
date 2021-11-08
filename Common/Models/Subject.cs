@@ -10,6 +10,6 @@ namespace Common.Models
         [Required, MaxLength(100)]
         public string Name { get; set; }
 
-        public virtual List<Course> Courses { get; set; }
+        public virtual ICollection<Course> Courses { get; set; }
     }
 }

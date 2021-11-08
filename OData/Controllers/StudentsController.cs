@@ -20,17 +20,19 @@ namespace OData.Controllers
         }
 
         [HttpGet]
-        [EnableQuery(PageSize = 10)]
-        public async Task<ActionResult<IEnumerable<Student>>> GetStudents()
-        {
-            return await _context.Students.Include(s => s.Courses).ThenInclude(c => c.Subject).ToListAsync();
-        }
+        [EnableQuery]
+        public IQueryable<Student> GetStudents() => _context.Students;
 
         [HttpGet]
+        [EnableQuery]
         [ODataRoute("students({id})")]
         public async Task<ActionResult<Student>> GetStudent([FromODataUri] int id)
         {
-            var student = await _context.Students.Include(s => s.Courses).FirstOrDefaultAsync(s => s.StudentId == id);
+            _context.Students.Include(s => s.Courses).ThenInclude(c => c.Subject).FirstOrDefault(s => s.StudentId == id);
+            var student = await _context.Students
+                .Include(s => s.Courses)
+                .ThenInclude(c => c.Subject)
+                .FirstOrDefaultAsync(s => s.StudentId == id);
 
             if (student == null)
             {
@@ -39,8 +41,9 @@ namespace OData.Controllers
 
             return student;
         }
+        
 
-        [HttpGet]
+        /*[HttpGet]
         public async Task<FileContentResult> GetQRCode(int studentId)
         {
             var student = await _context.Students.FindAsync(studentId);
@@ -51,6 +54,19 @@ namespace OData.Controllers
             }
 
             return File(student.QRCode, "application/png");
+        }*/
+
+        [HttpGet]
+        public async Task<byte[]> GetQRCode(int studentId)
+        {
+            var student = await _context.Students.FindAsync(studentId);
+
+            if (student == null)
+            {
+                return null;
+            }
+
+            return student.QRCode;
         }
 
         [HttpPost]

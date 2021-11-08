@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Logs\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="Logs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="..\Common\Data\DTOs\AttendanceDTO.cs" Link="Data\DTOs\AttendanceDTO.cs" />
     <Compile Include="..\Common\Data\DTOs\CourseDTO.cs" Link="Data\DTOs\CourseDTO.cs" />
     <Compile Include="..\Common\Data\DTOs\CourseSubjectDTO.cs" Link="Data\DTOs\CourseSubjectDTO.cs" />
@@ -15,7 +22,7 @@
     <Compile Include="..\Common\Data\PaginatedList.cs" Link="Data\PaginatedList.cs" />
     <Compile Include="..\Common\Data\Profiles.cs" Link="Data\Profiles.cs" />
     <Compile Include="..\Common\Data\SchoolContext.cs" Link="Data\SchoolContext.cs" />
-    <Compile Include="..\Common\Logs\TimerLoggingMW.cs" Link="Logs\TimerLoggingMW.cs" />
+    <Compile Include="..\Common\Measurement\TimerLoggingMW.cs" Link="Measurement\TimerLoggingMW.cs" />
     <Compile Include="..\Common\Models\Attendance.cs" Link="Models\Attendance.cs" />
     <Compile Include="..\Common\Models\Course.cs" Link="Models\Course.cs" />
     <Compile Include="..\Common\Models\Student.cs" Link="Models\Student.cs" />
@@ -37,7 +44,6 @@
 
   <ItemGroup>
     <Folder Include="Data\DTOs\" />
-    <Folder Include="Logs\" />
     <Folder Include="Models\" />
   </ItemGroup>
 

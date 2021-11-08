@@ -21,10 +21,7 @@ namespace OData.Controllers
 
         [HttpGet]
         [EnableQuery(PageSize = 10)]
-        public async Task<ActionResult<IEnumerable<Course>>> GetCourses()
-        {
-            return await _context.Courses.Include(c => c.Subject).Include(c => c.Students).ToListAsync();
-        }
+        public IQueryable<Course> GetCourses() =>_context.Courses;
 
         [HttpGet]
         [ODataRoute("courses({id})")]

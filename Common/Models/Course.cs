@@ -22,6 +22,6 @@ namespace Common.Models
         public int? SubjectId { get; set; }
         public Subject Subject { get; set; }
 
-        public List<Student> Students { get; set; }
+        public ICollection<Student> Students { get; set; }
     }
 }

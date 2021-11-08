@@ -1,7 +1,0 @@
-OData
-	Query 1: (189 ms, 2136 B)
-	Query 2: (7 ms, 17554 B)
-	Query 3: (131 ms, 3630 B)
-	Query 4: (129 ms, 10880 B)
-	Query 5: (98 ms, 3258 B)
-	Query 6: (136 ms, 2280 B) (138 ms, 2246 B) (139 ms, 2184 B) (157 ms, 2122 B) (142 ms, 2100 B) 

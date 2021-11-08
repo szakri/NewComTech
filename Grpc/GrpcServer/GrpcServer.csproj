@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Logs\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="Logs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="..\..\Common\Data\PaginatedList.cs" Link="Data\PaginatedList.cs" />
     <Compile Include="..\..\Common\Data\SchoolContext.cs" Link="Data\SchoolContext.cs" />
     <Compile Include="..\..\Common\Models\Attendance.cs" Link="Models\Attendance.cs" />
@@ -27,10 +34,6 @@
     <PackageReference Include="Grpc.AspNetCore" Version="2.27.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.3" />
     <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.9" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Logs\" />
   </ItemGroup>
 
 </Project>

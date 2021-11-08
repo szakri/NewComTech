@@ -6,6 +6,7 @@ using HotChocolate.Data;
 using Common.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace GraphQL.Services
 {
@@ -16,20 +17,19 @@ namespace GraphQL.Services
         [UseProjection]
         [UseFiltering]
         [UseSorting]
-        public async Task<IEnumerable<Student>> GetStudents([ScopedService] SchoolContext context) =>
-            await context.Students.Include(s => s.Courses).ThenInclude(c => c.Subject).ToListAsync();
+        public IQueryable<Student> GetStudents([ScopedService] SchoolContext context) => context.Students;
 
         [UseDbContext(typeof(SchoolContext))]
-        public async Task<Student> GetStudent([ScopedService] SchoolContext context, int id) =>
-            await context.Students.Include(s => s.Courses).FirstOrDefaultAsync(s => s.StudentId == id);
+        [UseProjection]
+        public async Task<Student> GetStudentAsync([ScopedService] SchoolContext context, int id) =>
+            await context.Students.Include(s => s.Courses).ThenInclude(c => c.Subject).FirstOrDefaultAsync(s => s.StudentId == id);
 
         [UseDbContext(typeof(SchoolContext))]
         [UsePaging]
         [UseProjection]
         [UseFiltering]
         [UseSorting]
-        public async Task<IEnumerable<Course>> GetCourses([ScopedService] SchoolContext context) =>
-            await context.Courses.Include(c => c.Subject).Include(c => c.Students).ToListAsync();
+        public IQueryable<Course> GetCourses([ScopedService] SchoolContext context) => context.Courses;
 
         [UseDbContext(typeof(SchoolContext))]
         public async Task<Course> GetCourse([ScopedService] SchoolContext context, int id) =>
@@ -40,8 +40,7 @@ namespace GraphQL.Services
         [UseProjection]
         [UseFiltering]
         [UseSorting]
-        public async Task<IEnumerable<Subject>> GetSubjects([ScopedService] SchoolContext context) =>
-            await context.Subjects.Include(s => s.Courses).ToListAsync();
+        public IQueryable<Subject> GetSubjects([ScopedService] SchoolContext context) => context.Subjects;
 
         [UseDbContext(typeof(SchoolContext))]
         public async Task<Subject> GetSubject([ScopedService] SchoolContext context, int id) =>
@@ -52,8 +51,7 @@ namespace GraphQL.Services
         [UseProjection]
         [UseFiltering]
         [UseSorting]
-        public async Task<IEnumerable<Attendance>> GetAttendances([ScopedService] SchoolContext context) =>
-            await context.Attendances.Include(a => a.Student).Include(a => a.Course).ThenInclude(c => c.Subject).ToListAsync();
+        public IQueryable<Attendance> GetAttendances([ScopedService] SchoolContext context) => context.Attendances;
 
         [UseDbContext(typeof(SchoolContext))]
         public async Task<Attendance> GetAttendance([ScopedService] SchoolContext context, int id) =>
